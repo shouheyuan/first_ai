@@ -1,0 +1,189 @@
+{
+  "metadata": {
+    "title": "CreatiAds - AI驱动的广告创意和营销自动化平台",
+    "description": "使用AI生成令人惊叹的广告创意，在Meta、Google和TikTok上启动营销活动，并自动优化效果。"
+  },
+  "nav": {
+    "home": "首页",
+    "aiCreative": "AI创意",
+    "aiAds": "AI广告",
+    "solutions": "解决方案",
+    "pricing": "定价",
+    "freeTools": "免费工具",
+    "blog": "博客"
+  },
+  "hero": {
+    "badge": "AI驱动的广告创意平台",
+    "title": "AI时代的广告助手",
+    "description": "生成高转化率的广告创意，在Meta、Google和TikTok上启动营销活动，并自动优化效果——全部在一个平台上完成。",
+    "cta": {
+      "primary": "免费开始试用",
+      "secondary": "试用AI生成器"
+    },
+    "trust": {
+      "noCard": "无需信用卡",
+      "freeCredits": "50个免费积分",
+      "cancel": "随时取消"
+    }
+  },
+  "home": {
+    "trustedBy": "全球10,000+广告商和品牌信赖之选"
+  },
+  "features": {
+    "title": "扩展广告所需的一切",
+    "description": "从创意生成到营销活动优化，CreatiAds提供完整的AI驱动广告平台。",
+    "learnMore": "了解更多",
+    "items": {
+      "aiImage": {
+        "title": "AI图像生成器",
+        "description": "使用AI在几秒钟内创建精美的广告视觉内容。无需设计技能。"
+      },
+      "aiVideo": {
+        "title": "AI视频生成器",
+        "description": "从文本提示或产品URL生成引人注目的视频广告。"
+      },
+      "templates": {
+        "title": "创意模板",
+        "description": "1000+经过验证的广告模板，针对每个平台和格式进行了优化。"
+      },
+      "adLaunch": {
+        "title": "一键广告发布",
+        "description": "只需单击一次即可在Meta、Google和TikTok上启动营销活动。"
+      },
+      "optimization": {
+        "title": "AI广告优化",
+        "description": "自动优化出价、预算和定向，以获得最大ROAS。"
+      },
+      "multiPlatform": {
+        "title": "多平台自动化",
+        "description": "从一个统一的仪表板管理您的所有广告账户。"
+      }
+    }
+  },
+  "workflow": {
+    "title": "AI广告闭环",
+    "description": "从创意到营销活动再到优化——一个无缝的AI工作流程。",
+    "workflowAlt": "AI创意 → 广告发布 → 广告优化 闭环工作流程",
+    "step": "步骤",
+    "explore": "探索",
+    "steps": {
+      "creative": {
+        "title": "AI创意",
+        "description": "使用AI在几秒钟内生成精美的广告图片和视频。",
+        "href": "/tools/ai-image-generator"
+      },
+      "publishing": {
+        "title": "AI广告发布",
+        "description": "一键在Meta、Google和TikTok上发布。",
+        "href": "/one-click-ad-launch"
+      },
+      "running": {
+        "title": "AI广告运行",
+        "description": "24/7自动优化以获得最大ROAS。",
+        "href": "/ai-ad-optimization"
+      }
+    }
+  },
+  "cta": {
+    "title": "准备好将您的广告效果提升10倍了吗？",
+    "description": "加入数千名使用CreatiAds的营销人员的行列，生成更好的创意，更快启动，并实现盈利增长。",
+    "button": "免费开始使用"
+  },
+  "pricing": {
+    "title": "简单透明的定价",
+    "description": "免费开始。随增长扩展。无隐藏费用。",
+    "plans": {
+      "free": {
+        "name": "免费版",
+        "price": "¥0",
+        "period": "永久",
+        "description": "开始使用AI广告工具"
+      },
+      "pro": {
+        "name": "专业版",
+        "price": "¥349",
+        "period": "/月",
+        "description": "适合成长中的企业和营销人员",
+        "popular": "最受欢迎"
+      },
+      "enterprise": {
+        "name": "企业版",
+        "price": "定制",
+        "period": "",
+        "description": "适合代理机构和大型团队"
+      }
+    }
+  },
+  "footer": {
+    "description": "AI驱动的广告创意生成和营销活动自动化平台。",
+    "copyright": "© {year} CreatiAds。保留所有权利。"
+  },
+  "pageA": {
+    "title": "企业级功能",
+    "description": "为企业团队打造的专业级AI广告功能",
+    "metadata": {
+      "title": "CreatiAds Enterprise - AI广告平台企业版",
+      "description": "面向营销团队的企业级AI广告平台。通过AI驱动的创意生成和自动化扩展您的营销活动。"
+    },
+    "hero": {
+      "badge": "企业级AI平台 页面 A",
+      "slogans": [
+        {
+          "line1": "规模化",
+          "highlight": "广告运营"
+        },
+        {
+          "line1": "AI赋能",
+          "highlight": "团队效率"
+        },
+        {
+          "line1": "企业级",
+          "highlight": "安全保障"
+        }
+      ],
+      "description": "通过AI驱动的广告创意生成、自动化营销活动管理和实时性能优化，赋能您的营销团队，实现企业级规模增长。",
+      "cta": {
+        "primary": "联系销售",
+        "secondary": "观看演示"
+      },
+      "trustBadges": [
+        "SOC 2 合规认证",
+        "99.9% 正常运行SLA",
+        "24/7 企业支持"
+      ]
+    }
+  },
+  "pageB": {
+    "metadata": {
+      "title": "CreatiAds Studio - 设计师AI创意工具",
+      "description": "面向设计师和内容创作者的AI驱动创意工具。在几秒钟内生成令人惊叹的视觉效果、视频和广告创意。"
+    },
+    "hero": {
+      "badge": "AI创意工作室 页面 B",
+      "slogans": [
+        {
+          "line1": "释放你的",
+          "highlight": "创意潜能"
+        },
+        {
+          "line1": "用AI赋能",
+          "highlight": "加速设计"
+        },
+        {
+          "line1": "在几秒钟内",
+          "highlight": "创建精美视觉"
+        }
+      ],
+      "description": "通过AI驱动的工具转变您的创意工作流程。生成专业的广告创意、图像和视频，吸引您的受众。",
+      "cta": {
+        "primary": "开始创作",
+        "secondary": "浏览模板"
+      },
+      "trustBadges": [
+        "每月免费50积分",
+        "无需信用卡",
+        "随时取消"
+      ]
+    }
+  }
+}
