@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { usePathname, useRouter } from "next/navigation";
 import { locales, type Locale, localeLabels, localeFlags, defaultLocale } from "@/i18n/config";
+import { usePathname, useRouter } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -18,21 +18,9 @@ export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleLocaleChange = (newLocale: Locale) => {
-    // 处理路径逻辑：默认语言 'en' 在 URL 中没有前缀
-    let newPathname: string;
-    
-    if (currentLocale === defaultLocale) {
-      // 当前是默认语言（无前缀），需要添加新语言前缀
-      newPathname = `/${newLocale}${pathname}`;
-    } else if (newLocale === defaultLocale) {
-      // 切换到默认语言，移除当前语言前缀
-      newPathname = pathname.replace(`/${currentLocale}`, '') || '/';
-    } else {
-      // 非默认语言之间切换，替换前缀
-      newPathname = pathname.replace(`/${currentLocale}`, `/${newLocale}`);
-    }
-    
-    router.push(newPathname);
+    // usePathname 从 next-intl/navigation 返回的是不带 locale 前缀的路径
+    // router.replace 会自动处理 locale 前缀的添加/移除
+    router.replace(pathname, { locale: newLocale });
     setIsOpen(false);
   };
 

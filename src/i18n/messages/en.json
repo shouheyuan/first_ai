@@ -194,32 +194,50 @@
         {
           "key": "aiCreative",
           "name": "AI Creative Generation",
-          "values": [true, false]
+          "values": [
+            true,
+            false
+          ]
         },
         {
           "key": "crossPlatform",
           "name": "Cross-Platform Publishing",
-          "values": [true, false]
+          "values": [
+            true,
+            false
+          ]
         },
         {
           "key": "autoOptimization",
           "name": "Automatic Optimization",
-          "values": [true, false]
+          "values": [
+            true,
+            false
+          ]
         },
         {
           "key": "creativeTime",
           "name": "Creative Production Time",
-          "values": ["Seconds", "Hours/Days"]
+          "values": [
+            "Seconds",
+            "Hours/Days"
+          ]
         },
         {
           "key": "adCost",
           "name": "Cost Per Ad",
-          "values": ["80% Lower", "High Fixed"]
+          "values": [
+            "80% Lower",
+            "High Fixed"
+          ]
         },
         {
           "key": "testScale",
           "name": "Testing & Scaling",
-          "values": ["Unlimited Creatives", "Limited"]
+          "values": [
+            "Unlimited Creatives",
+            "Limited"
+          ]
         }
       ]
     },
@@ -256,6 +274,100 @@
           "title": "Agencies",
           "description": "Scale creative output across all your clients.",
           "href": "/agencies"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Scale Your Ads?",
+      "description": "Join thousands of successful brands using AI-powered ad automation. Start for free today.",
+      "button": "Start Free Trial"
+    },
+    "testimonials": {
+      "titlePrefix": "Loved by",
+      "titleHighlight": "10,000+",
+      "titleSuffix": "Advertisers",
+      "description": "See what marketers say about CreatiAds.",
+      "items": [
+        {
+          "key": "sarah",
+          "name": "Sarah K.",
+          "role": "E-commerce Owner",
+          "industry": "Fashion",
+          "quote": "CreatiAds cut our ad production time by 80%. We now test 5x more creatives every week.",
+          "avatar": "SK"
+        },
+        {
+          "key": "mike",
+          "name": "Mike L.",
+          "role": "Marketing Director",
+          "industry": "SaaS",
+          "quote": "Managing 20+ clients used to be chaos. Now we deliver fresh creatives for everyone in hours.",
+          "avatar": "ML"
+        },
+        {
+          "key": "jessica",
+          "name": "Jessica T.",
+          "role": "Growth Lead",
+          "industry": "App Marketing",
+          "quote": "Our CPI dropped 50% after switching to CreatiAds AI-generated video ads.",
+          "avatar": "JT"
+        },
+        {
+          "key": "david",
+          "name": "David W.",
+          "role": "Founder",
+          "industry": "Dropshipping",
+          "quote": "I launched 200 product tests in one month. CreatiAds made me a one-person ad agency.",
+          "avatar": "DW"
+        },
+        {
+          "key": "linda",
+          "name": "Linda C.",
+          "role": "Agency Owner",
+          "industry": "Digital Agency",
+          "quote": "Client retention went up 40% — we deliver 10x more creative options now.",
+          "avatar": "LC"
+        },
+        {
+          "key": "tom",
+          "name": "Tom R.",
+          "role": "Media Buyer",
+          "industry": "E-commerce",
+          "quote": "The AI ad optimization alone saved us $15K/month in wasted spend.",
+          "avatar": "TR"
+        }
+      ]
+    },
+    "faq": {
+      "titlePrefix": "常见",
+      "titleHighlight": "问题",
+      "titleSuffix": "",
+      "description": "关于 CreatiAds 您需要了解的一切。",
+      "items": [
+        {
+          "key": "what",
+          "question": "CreatiAds 是什么？",
+          "answer": "CreatiAds 是一个 AI 驱动的平台，帮助您生成高转化率的广告创意，在多个平台上启动营销活动，并自动优化性能。"
+        },
+        {
+          "key": "aiImage",
+          "question": "AI 图像生成器如何工作？",
+          "answer": "只需描述您的产品或提供 URL，我们的 AI 就会在几秒钟内为您的目标平台生成专业的广告图像。"
+        },
+        {
+          "key": "platforms",
+          "question": "支持哪些广告平台？",
+          "answer": "CreatiAds 支持 Meta（Facebook 和 Instagram）、Google 广告和 TikTok 广告，并提供完整的自动化功能。"
+        },
+        {
+          "key": "free",
+          "question": "有免费计划吗？",
+          "answer": "是的！我们提供慷慨的免费计划，每月 50 个积分，以及免费工具，如 ROAS 计算器、广告标题生成器等。"
+        },
+        {
+          "key": "compare",
+          "question": "CreatiAds 与竞争对手相比如何？",
+          "answer": "与其他仅专注于创意生成的工具不同，CreatiAds 将 AI 创意生成与广告自动化和优化结合在一起 —— 全部在一个平台上。"
         }
       ]
     }
@@ -415,11 +527,6 @@
         "No Credit Card Required",
         "Cancel Anytime"
       ]
-    },
-    "cta": {
-      "title": "Ready to Scale Your Ads?",
-      "description": "Join thousands of successful brands using AI-powered ad automation. Start for free today.",
-      "button": "Start Free Trial"
     }
   }
 }
