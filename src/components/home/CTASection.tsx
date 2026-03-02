@@ -6,35 +6,18 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 
-interface CTAConfig {
-  textKey: string;
-  href: string;
-}
-
-interface CTASectionConfig {
-  titleKey?: string;
-  descriptionKey?: string;
-  cta?: CTAConfig;
-}
-
 interface CTASectionProps {
   namespace?: string;
-  config?: CTASectionConfig;
 }
 
 export default function CTASection({ 
-  namespace = "cta",
-  config 
+  namespace = "default"
 }: CTASectionProps) {
   const t = useTranslations(namespace);
 
-  // 从 config 获取 key，然后通过 t() 获取实际文本
-  const title = config?.titleKey ? t(config.titleKey) : t("title");
-  const description = config?.descriptionKey ? t(config.descriptionKey) : t("description");
-  
-  // CTA 配置
-  const ctaText = config?.cta?.textKey ? t(config.cta.textKey) : t("button");
-  const ctaHref = config?.cta?.href || "/pricing";
+  const title = t("cta.title");
+  const description = t("cta.description");
+  const buttonText = t("cta.button");
 
   return (
     <section className="py-20 lg:py-28 bg-hero-gradient text-primary-foreground relative overflow-hidden">
@@ -55,8 +38,8 @@ export default function CTASection({
             {description}
           </p>
           <Button variant="hero" size="lg" asChild>
-            <Link href={ctaHref}>
-              {ctaText} <ArrowRight className="h-4 w-4 ml-1" />
+            <Link href="/pricing">
+              {buttonText} <ArrowRight className="h-4 w-4 ml-1" />
             </Link>
           </Button>
         </motion.div>

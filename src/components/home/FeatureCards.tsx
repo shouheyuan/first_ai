@@ -10,11 +10,15 @@ interface FeatureItem {
   key: string;
   color: string;
   href: string;
+  title?: string;
+  description?: string;
 }
 
 interface FeatureCardsProps {
   namespace?: string;
-  features?: FeatureItem[];
+  config?: {
+    features?: FeatureItem[];
+  };
 }
 
 const defaultFeatures: FeatureItem[] = [
@@ -67,20 +71,38 @@ const item = {
 };
 
 export default function FeatureCards({ 
-  namespace = "features",
-  features = defaultFeatures
+  namespace = "default"
 }: FeatureCardsProps) {
   const t = useTranslations(namespace);
 
+  // Merge translation data with default features
+  // Icon components can't be serialized in JSON, so we keep the default config
+  // and only override title/description from translations
+  const translationData = t.raw("features.items");
+  let featuresItems = defaultFeatures;
+  
+  if (Array.isArray(translationData) && translationData.length > 0) {
+    featuresItems = defaultFeatures.map((defaultItem, index) => {
+      const translationItem = translationData[index];
+      if (translationItem) {
+        return {
+          icon: defaultItem.icon,
+          ...translationItem
+        };
+      }
+      return defaultItem;
+    });
+  }
+  
   return (
     <section className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {t("title")}
+            {t("features.title")}
           </h2>
           <p className="text-muted-foreground text-lg">
-            {t("description")}
+            {t("features.description")}
           </p>
         </div>
         <motion.div
@@ -90,19 +112,19 @@ export default function FeatureCards({
           viewport={{ once: true, margin: "-50px" }}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {features.map((f) => (
+          {featuresItems.map((f: FeatureItem) => (
             <motion.div key={f.key} variants={item}>
               <Link
-                href={f.href}
+                href={f.href || '#'}
                 className="group block bg-card rounded-xl border p-6 shadow-card hover:shadow-card-hover hover:scale-[1.02] transition-all duration-300"
               >
                 <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg bg-secondary mb-4 ${f.color}`}>
                   <f.icon className="h-6 w-6" />
                 </div>
-                <h3 className="font-display font-semibold text-lg mb-2 group-hover:text-primary transition-colors">{t(`items.${f.key}.title`)}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-3">{t(`items.${f.key}.description`)}</p>
+                <h3 className="font-display font-semibold text-lg mb-2 group-hover:text-primary transition-colors">{f.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-3">{f.description}</p>
                 <span className="text-sm font-medium text-primary flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                  {t("learnMore")} <ArrowRight className="h-3.5 w-3.5" />
+                  {t("features.learnMore")} <ArrowRight className="h-3.5 w-3.5" />
                 </span>
               </Link>
             </motion.div>

@@ -11,20 +11,14 @@ interface CTAConfig {
   href: string;
 }
 
-interface HeroConfig {
-  badgeKey?: string;
-  slogansKey?: string;
-  descriptionKey?: string;
-  primaryCTA?: CTAConfig;
-  secondaryCTA?: CTAConfig;
-  trustBadgesKey?: string;
-}
-
 interface HeroSectionProps {
   // 多语言命名空间
   namespace?: string;
   // 配置对象 - 包含所有内容的 key
-  config?: HeroConfig;
+  config?: {
+    cat?: CTAConfig;
+    secondaryCTA?: CTAConfig;
+  };
 }
 
 // 默认标语
@@ -32,68 +26,46 @@ const defaultSlogans = [
   { line1: "Your Ad Copilot", highlight: "in the AI Era" },
   { line1: "You Are Your Own", highlight: "Ad Expert" },
   { line1: "No Fear for", highlight: "Meta Ads" },
-  { line1: "Create Stunning Ads", highlight: "10x Faster" },
+  { line1: "Create Stunning Ads", highlight: "10x Faster" }
 ];
 
-export default function HeroSection({ 
-  namespace = "hero",
-  config 
+export default function HeroSection({
+  namespace = "default",
+  config
 }: HeroSectionProps) {
   const [sloganIdx, setSloganIdx] = useState(0);
-  
+
   // 使用命名空间获取翻译
   const t = useTranslations(namespace);
 
+
   // 从 config 获取 key，然后通过 t() 获取实际文本
-  const badge = config?.badgeKey ? t(config.badgeKey) : t('badge');
-  const description = config?.descriptionKey ? t(config.descriptionKey) : t('description');
-  
+  const badge = t("hero.badge");
+  const description = t("hero.description");
+
   // CTA 文本
-  const primaryCTAText = config?.primaryCTA?.textKey 
-    ? t(config.primaryCTA.textKey) 
-    : t('cta.primary');
-  const secondaryCTAText = config?.secondaryCTA?.textKey 
-    ? t(config.secondaryCTA.textKey) 
-    : t('cta.secondary');
-  
+  const primaryCTAText = t("hero.cta.primary");
+  const secondaryCTAText = t("hero.cta.secondary");
+
   // CTA 链接
-  const primaryHref = config?.primaryCTA?.href || '/pricing';
-  const secondaryHref = config?.secondaryCTA?.href || '/tools/ai-image-generator';
-  
+  const primaryHref = (config?.cat?.href as string) || "/pricing";
+  const secondaryHref =
+    (config?.secondaryCTA?.href as string) || "/tools/ai-image-generator";
+
   // 获取标语 - 尝试从多语言获取，否则使用默认值
   let slogans = defaultSlogans;
-  const slogansKey = config?.slogansKey || 'slogans';
-  try {
-    const slogansFromT = t.raw(slogansKey);
-    if (Array.isArray(slogansFromT) && slogansFromT.length > 0) {
-      slogans = slogansFromT;
-    }
-  } catch {
-    // 使用默认值
+  const slogansFromT = t.raw("hero.slogans");
+  if (Array.isArray(slogansFromT) && slogansFromT.length > 0) {
+    slogans = slogansFromT;
   }
 
   // 获取信任徽章
   let trustBadges: string[] = [];
-  const trustBadgesKey = config?.trustBadgesKey;
-  
-  if (trustBadgesKey) {
-    // 如果配置了 trustBadgesKey，使用它
-    try {
-      trustBadges = t.raw(trustBadgesKey);
-    } catch {
-      trustBadges = [];
-    }
-  } else {
-    // 否则使用默认的 trust 结构
-    try {
-      trustBadges = [
-        t('trust.noCard'),
-        t('trust.freeCredits'),
-        t('trust.cancel')
-      ];
-    } catch {
-      trustBadges = [];
-    }
+  const trustBadgesFromT = t.raw("hero.trustBadges");
+  try {
+    trustBadges = trustBadgesFromT;
+  } catch {
+    trustBadges = [];
   }
 
   useEffect(() => {
@@ -137,15 +109,15 @@ export default function HeroSection({
                   className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white"
                 >
                   {slogans[sloganIdx]?.line1} <br />
-                  <span className="text-orange-400">{slogans[sloganIdx]?.highlight}</span>
+                  <span className="text-orange-400">
+                    {slogans[sloganIdx]?.highlight}
+                  </span>
                 </motion.h1>
               </AnimatePresence>
             </div>
 
             {/* Description */}
-            <p className="text-lg text-white/70 max-w-lg mb-8">
-              {description}
-            </p>
+            <p className="text-lg text-white/70 max-w-lg mb-8">{description}</p>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
@@ -187,8 +159,12 @@ export default function HeroSection({
                     <Zap className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <div className="text-white font-bold text-lg">AI Creative Studio</div>
-                    <div className="text-white/60 text-sm">Generating ad variations...</div>
+                    <div className="text-white font-bold text-lg">
+                      AI Creative Studio
+                    </div>
+                    <div className="text-white/60 text-sm">
+                      Generating ad variations...
+                    </div>
                   </div>
                 </div>
 
@@ -212,15 +188,25 @@ export default function HeroSection({
 
                 {/* Preview cards */}
                 <div className="space-y-3">
-                  <div className="text-xs text-white/40 uppercase tracking-wider">Generated Creatives</div>
+                  <div className="text-xs text-white/40 uppercase tracking-wider">
+                    Generated Creatives
+                  </div>
                   <div className="grid grid-cols-2 gap-3">
                     <div className="bg-gradient-to-br from-purple-500/80 to-pink-500/80 rounded-lg p-3 aspect-video flex flex-col justify-end">
-                      <span className="text-white text-xs font-medium">Summer Sale</span>
-                      <span className="text-white/60 text-[10px]">1920x1080</span>
+                      <span className="text-white text-xs font-medium">
+                        Summer Sale
+                      </span>
+                      <span className="text-white/60 text-[10px]">
+                        1920x1080
+                      </span>
                     </div>
                     <div className="bg-gradient-to-br from-blue-500/80 to-cyan-500/80 rounded-lg p-3 aspect-video flex flex-col justify-end">
-                      <span className="text-white text-xs font-medium">New Arrival</span>
-                      <span className="text-white/60 text-[10px]">1080x1080</span>
+                      <span className="text-white text-xs font-medium">
+                        New Arrival
+                      </span>
+                      <span className="text-white/60 text-[10px]">
+                        1080x1080
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -229,7 +215,11 @@ export default function HeroSection({
               {/* Floating elements */}
               <motion.div
                 animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
                 className="absolute -top-6 -right-6 bg-white rounded-2xl p-4 shadow-xl border border-gray-100"
               >
                 <div className="flex items-center gap-3">
@@ -245,7 +235,12 @@ export default function HeroSection({
 
               <motion.div
                 animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1
+                }}
                 className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-xl border border-gray-100"
               >
                 <div className="flex items-center gap-3">
@@ -254,7 +249,9 @@ export default function HeroSection({
                   </div>
                   <div>
                     <div className="text-xs text-gray-500">Time Saved</div>
-                    <div className="text-lg font-bold text-gray-900">40 hrs/week</div>
+                    <div className="text-lg font-bold text-gray-900">
+                      40 hrs/week
+                    </div>
                   </div>
                 </div>
               </motion.div>

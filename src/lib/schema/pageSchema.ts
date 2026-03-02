@@ -104,6 +104,7 @@ export interface Section {
 
 // Page Schema Interface
 export interface PageSchema {
+  namespace?: string;
   metadata?: PageMetadata;
   config?: PageConfig;
   sections: Array<{

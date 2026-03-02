@@ -10,8 +10,9 @@ interface Logo {
 
 interface LogoCloudProps {
   namespace?: string;
-  titleKey?: string;
-  logos?: Logo[];
+  config?: {
+    logos?: Logo[];
+  };
 }
 
 const defaultLogos: Logo[] = [
@@ -25,18 +26,15 @@ const defaultLogos: Logo[] = [
   { name: "Figma" }
 ];
 
-export default function LogoCloud({
-  namespace = "home",
-  titleKey = "trustedBy",
-  logos = defaultLogos
-}: LogoCloudProps) {
+export default function LogoCloud({ namespace = "default", config }: LogoCloudProps) {
   const t = useTranslations(namespace);
+  const logos = config?.logos || defaultLogos;
 
   return (
     <section className="py-16 bg-background border-y">
       <div className="container mx-auto">
         <p className="text-center text-sm font-medium text-muted-foreground mb-8">
-          {t(titleKey)}
+          {t("logoCloud.title")}
         </p>
         <motion.div
           initial={{ opacity: 0 }}

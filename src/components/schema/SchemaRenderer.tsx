@@ -14,20 +14,22 @@ import CTASection from "@/components/home/CTASection";
 import { PageSchema } from "@/lib/schema/pageSchema";
 
 // 组件映射表 - 复用现有组件
-type ComponentRenderer = React.FC<{ data?: unknown }>;
+// 使用 any 类型来绕过各个组件不同的 props 要求
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type ComponentRenderer = React.FC<{ namespace?: string; data?: any }>;
 
 const componentMap: Record<string, ComponentRenderer> = {
-  hero: ({ data }) => <HeroSection {...(data || {})} />,
-  logoCloud: ({ data }) => <LogoCloud {...(data || {})} />,
-  featureCards: ({ data }) => <FeatureCards {...(data || {})} />,
-  featureDeepDive: ({ data }) => <FeatureDeepDive {...(data || {})} />,
-  workflow: ({ data }) => <WorkflowSection {...(data || {})} />,
-  showcase: ({ data }) => <ShowcaseSection {...(data || {})} />,
-  useCases: ({ data }) => <UseCasesSection {...(data || {})} />,
-  testimonials: ({ data }) => <TestimonialsSection {...(data || {})} />,
-  comparison: ({ data }) => <ComparisonSection {...(data || {})} />,
-  faq: ({ data }) => <FAQSection {...(data || {})} />,
-  cta: ({ data }) => <CTASection {...(data || {})} />,
+  hero: ({ namespace, data }) => <HeroSection namespace={namespace} config={data} />,
+  logoCloud: ({ namespace, data }) => <LogoCloud namespace={namespace} config={data} />,
+  featureCards: ({ namespace, data }) => <FeatureCards namespace={namespace} config={data} />,
+  featureDeepDive: ({ namespace, data }) => <FeatureDeepDive namespace={namespace} config={data} />,
+  workflow: ({ namespace }) => <WorkflowSection namespace={namespace} />,
+  showcase: ({ namespace }) => <ShowcaseSection namespace={namespace} />,
+  useCases: ({ namespace }) => <UseCasesSection namespace={namespace} />,
+  testimonials: ({ namespace }) => <TestimonialsSection namespace={namespace} />,
+  comparison: ({ namespace }) => <ComparisonSection namespace={namespace} />,
+  faq: ({ namespace }) => <FAQSection namespace={namespace} />,
+  cta: ({ namespace }) => <CTASection namespace={namespace} />
 };
 
 interface SchemaRendererProps {
@@ -35,13 +37,13 @@ interface SchemaRendererProps {
 }
 
 export default function SchemaRenderer({ schema }: SchemaRendererProps) {
-  const { sections, config } = schema;
+  const { namespace, config, sections } = schema;
 
   return (
     <main className={config?.className || "flex-1 w-full"}>
       {sections.map((section, index) => {
         const Component = componentMap[section.type];
-        
+
         if (!Component) {
           console.warn(`Unknown section type: ${section.type}`);
           return null;
@@ -50,6 +52,7 @@ export default function SchemaRenderer({ schema }: SchemaRendererProps) {
         return (
           <Component
             key={`${section.type}-${index}`}
+            namespace={namespace}
             data={section.props}
           />
         );

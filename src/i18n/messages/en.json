@@ -12,111 +12,253 @@
     "freeTools": "Free Tools",
     "blog": "Blog"
   },
-  "hero": {
-    "badge": "AI-Powered Ad Creative Platform",
-    "title": "Your Ad Copilot in the AI Era",
-    "description": "Generate high-converting ad creatives, launch campaigns across Meta, Google & TikTok, and optimize performance — all in one platform.",
-    "cta": {
-      "primary": "Start Free Trial",
-      "secondary": "Try AI Generator"
+  "default": {
+    "hero": {
+      "badge": "AI-Powered Ad Creative Platform",
+      "title": "Your Ad Copilot in the AI Era",
+      "description": "Generate high-converting ad creatives, launch campaigns across Meta, Google & TikTok, and optimize performance — all in one platform.",
+      "slogans": [
+        {
+          "line1": "Your Ad Copilot",
+          "highlight": "in the AI Era"
+        },
+        {
+          "line1": "You Are Your Own",
+          "highlight": "Ad Expert"
+        },
+        {
+          "line1": "No Fear for",
+          "highlight": "Meta Ads"
+        },
+        {
+          "line1": "Create Stunning Ads",
+          "highlight": "10x Faster"
+        }
+      ],
+      "cta": {
+        "primary": "Start Free Trial",
+        "secondary": "Try AI Generator"
+      },
+      "trustBadges": [
+        "No credit card required",
+        "50 free credits",
+        "Cancel anytime"
+      ]
     },
-    "trust": {
-      "noCard": "No credit card required",
-      "freeCredits": "50 free credits",
-      "cancel": "Cancel anytime"
-    }
-  },
-  "home": {
-    "trustedBy": "Trusted by 10,000+ advertisers and brands worldwide"
-  },
-  "features": {
-    "title": "Everything You Need to Scale Your Ads",
-    "description": "From creative generation to campaign optimization, CreatiAds provides a complete AI-powered advertising platform.",
-    "learnMore": "Learn more",
-    "items": {
-      "aiImage": {
-        "title": "AI Image Generator",
-        "description": "Create stunning ad visuals in seconds with AI. No design skills needed."
-      },
-      "aiVideo": {
-        "title": "AI Video Generator",
-        "description": "Generate scroll-stopping video ads from text prompts or product URLs."
-      },
-      "templates": {
-        "title": "Creative Templates",
-        "description": "1000+ proven ad templates optimized for every platform and format."
-      },
-      "adLaunch": {
-        "title": "One Click Ad Launch",
-        "description": "Launch campaigns across Meta, Google, and TikTok with a single click."
-      },
-      "optimization": {
-        "title": "AI Ad Optimization",
-        "description": "Automatically optimize bids, budgets, and targeting for maximum ROAS."
-      },
-      "multiPlatform": {
-        "title": "Multi-Platform Automation",
-        "description": "Manage all your ad accounts from one unified dashboard."
+    "logoCloud": {
+      "title": "Trusted by 10,000+ advertisers and brands worldwide"
+    },
+    "features": {
+      "title": "Everything You Need to Scale Your Ads",
+      "description": "From creative generation to campaign optimization, CreatiAds provides a complete AI-powered advertising platform.",
+      "learnMore": "Learn more",
+      "items": [
+        {
+          "key": "aiImage",
+          "title": "AI Image Generator",
+          "description": "Create stunning ad visuals in seconds with AI. No design skills needed.",
+          "href": "/tools/ai-image-generator"
+        },
+        {
+          "key": "aiVideo",
+          "title": "AI Video Generator",
+          "description": "Generate scroll-stopping video ads from text prompts or product URLs.",
+          "href": "/tools/ai-video-generator"
+        },
+        {
+          "key": "templates",
+          "title": "Creative Templates",
+          "description": "1000+ proven ad templates optimized for every platform and format."
+        },
+        {
+          "key": "adLaunch",
+          "title": "One Click Ad Launch",
+          "description": "Launch campaigns across Meta, Google, and TikTok with a single click."
+        },
+        {
+          "key": "optimization",
+          "title": "AI Ad Optimization",
+          "description": "Automatically optimize bids, budgets, and targeting for maximum ROAS."
+        },
+        {
+          "key": "multiPlatform",
+          "title": "Multi-Platform Automation",
+          "description": "Manage all your ad accounts from one unified dashboard."
+        }
+      ]
+    },
+    "workflow": {
+      "title": "The AI Ad Closed Loop",
+      "description": "From creative to campaign to optimization — one seamless AI workflow.",
+      "alt": "AI Creative → Ad Publishing → Ad Optimization closed-loop workflow",
+      "step": "Step",
+      "explore": "Explore",
+      "steps": {
+        "creative": {
+          "title": "AI Creative",
+          "description": "Generate stunning ad images & videos with AI in seconds.",
+          "href": "/tools/ai-image-generator"
+        },
+        "publishing": {
+          "title": "AI Ads Publishing",
+          "description": "One-click launch across Meta, Google & TikTok.",
+          "href": "/one-click-ad-launch"
+        },
+        "running": {
+          "title": "AI Ads Running",
+          "description": "Automated optimization for maximum ROAS 24/7.",
+          "href": "/ai-ad-optimization"
+        }
       }
-    }
-  },
-  "workflow": {
-    "title": "The AI Ad Closed Loop",
-    "description": "From creative to campaign to optimization — one seamless AI workflow.",
-    "workflowAlt": "AI Creative → Ad Publishing → Ad Optimization closed-loop workflow",
-    "step": "Step",
-    "explore": "Explore",
-    "steps": {
-      "creative": {
-        "title": "AI Creative",
-        "description": "Generate stunning ad images & videos with AI in seconds.",
-        "href": "/tools/ai-image-generator"
-      },
-      "publishing": {
-        "title": "AI Ads Publishing",
-        "description": "One-click launch across Meta, Google & TikTok.",
-        "href": "/one-click-ad-launch"
-      },
-      "running": {
-        "title": "AI Ads Running",
-        "description": "Automated optimization for maximum ROAS 24/7.",
-        "href": "/ai-ad-optimization"
+    },
+    "featureDeepDive": {
+      "title": "The Complete AI Ad Closed Loop",
+      "subtitle": "From creative generation to campaign launch to continuous optimization — one intelligent platform powers it all.",
+      "stepLabel": "Step",
+      "features": {
+        "aiCreative": {
+          "title": "AI Creative Generation",
+          "description": "Generate scroll-stopping ad creatives in seconds. Our AI understands your brand, audience, and goals to produce high-converting images and videos across every format.",
+          "bullets": [
+            "Generate 50+ ad variations in one click",
+            "Supports Meta, Google, TikTok formats",
+            "Brand-consistent visuals every time"
+          ],
+          "imgAlt": "AI Creative generation dashboard showing multiple ad formats",
+          "ctaLabel": "Try AI Creative"
+        },
+        "adLaunch": {
+          "title": "One Click Ad Launch",
+          "description": "Publish campaigns across Meta, Google & TikTok with a single click. No more switching between ad managers — CreatiAds handles targeting, budgets, and placements automatically.",
+          "bullets": [
+            "Cross-platform launch in seconds",
+            "AI-optimized audience targeting",
+            "Automated budget allocation"
+          ],
+          "imgAlt": "One-click ad launch dashboard with platform selection",
+          "ctaLabel": "Launch Ads Now"
+        },
+        "adOptimization": {
+          "title": "AI Ad Optimization",
+          "description": "Our AI monitors performance 24/7 and automatically adjusts bids, budgets, and creatives to maximize your ROAS — so you can focus on strategy, not spreadsheets.",
+          "bullets": [
+            "Real-time ROAS optimization",
+            "Automated bid & budget adjustments",
+            "AI-powered creative rotation"
+          ],
+          "imgAlt": "AI optimization dashboard with real-time performance charts",
+          "ctaLabel": "Optimize Smarter"
+        }
       }
+    },
+    "showcase": {
+      "titlePrefix": "AI Creatives for",
+      "titleHighlight": "Every Industry",
+      "description": "See real examples of AI-generated ads across different verticals.",
+      "heroAlt": "AI-generated ad creatives across industries",
+      "industryAlt": "AI ad for {industry}",
+      "industries": [
+        {
+          "key": "ecommerce",
+          "label": "E-commerce"
+        },
+        {
+          "key": "food",
+          "label": "Food & Delivery"
+        },
+        {
+          "key": "fashion",
+          "label": "Fashion & Beauty"
+        }
+      ]
+    },
+    "comparison": {
+      "titlePrefix": "Why Brands Choose",
+      "titleHighlight": "CreatiAds",
+      "titleSuffix": "",
+      "description": "See how we stack up against traditional ad platforms in features and AI-powered performance.",
+      "featureColumn": "Features",
+      "competitors": [
+        {
+          "key": "creatiads",
+          "name": "CreatiAds",
+          "highlight": true
+        },
+        {
+          "key": "traditional",
+          "name": "Traditional",
+          "highlight": false
+        }
+      ],
+      "features": [
+        {
+          "key": "aiCreative",
+          "name": "AI Creative Generation",
+          "values": [true, false]
+        },
+        {
+          "key": "crossPlatform",
+          "name": "Cross-Platform Publishing",
+          "values": [true, false]
+        },
+        {
+          "key": "autoOptimization",
+          "name": "Automatic Optimization",
+          "values": [true, false]
+        },
+        {
+          "key": "creativeTime",
+          "name": "Creative Production Time",
+          "values": ["Seconds", "Hours/Days"]
+        },
+        {
+          "key": "adCost",
+          "name": "Cost Per Ad",
+          "values": ["80% Lower", "High Fixed"]
+        },
+        {
+          "key": "testScale",
+          "name": "Testing & Scaling",
+          "values": ["Unlimited Creatives", "Limited"]
+        }
+      ]
+    },
+    "useCases": {
+      "titlePrefix": "Built for",
+      "titleHighlight": "Every Business",
+      "description": "See how teams across industries use CreatiAds to grow.",
+      "explore": "Explore",
+      "items": [
+        {
+          "key": "ecommerce",
+          "iconName": "ShoppingBag",
+          "title": "E-commerce",
+          "description": "Generate product ads that convert shoppers into buyers.",
+          "href": "/e-commerce"
+        },
+        {
+          "key": "dropshipping",
+          "iconName": "Rocket",
+          "title": "Dropshipping",
+          "description": "Test products faster with instant ad creative generation.",
+          "href": "/dropshipping"
+        },
+        {
+          "key": "appMarketing",
+          "iconName": "BarChart3",
+          "title": "App Marketing",
+          "description": "Drive installs with compelling app install ads.",
+          "href": "/app-marketing"
+        },
+        {
+          "key": "agencies",
+          "iconName": "Users",
+          "title": "Agencies",
+          "description": "Scale creative output across all your clients.",
+          "href": "/agencies"
+        }
+      ]
     }
-  },
-  "cta": {
-    "title": "Ready to 10x Your Ad Performance?",
-    "description": "Join thousands of marketers using CreatiAds to generate better creatives, launch faster, and scale profitably.",
-    "button": "Get Started Free"
-  },
-  "pricing": {
-    "title": "Simple, Transparent Pricing",
-    "description": "Start free. Scale as you grow. No hidden fees.",
-    "plans": {
-      "free": {
-        "name": "Free",
-        "price": "$0",
-        "period": "forever",
-        "description": "Get started with AI ad tools"
-      },
-      "pro": {
-        "name": "Pro",
-        "price": "$49",
-        "period": "/month",
-        "description": "For growing businesses and marketers",
-        "popular": "Most Popular"
-      },
-      "enterprise": {
-        "name": "Enterprise",
-        "price": "Custom",
-        "period": "",
-        "description": "For agencies and large teams"
-      }
-    }
-  },
-  "footer": {
-    "description": "AI-powered ad creative generation and campaign automation platform.",
-    "copyright": "© {year} CreatiAds. All rights reserved."
   },
   "pageA": {
     "title": "Enterprise Features",
@@ -151,6 +293,95 @@
         "99.9% Uptime SLA",
         "24/7 Enterprise Support"
       ]
+    },
+    "faq": {
+      "titlePrefix": "Frequently Asked",
+      "titleHighlight": "Questions",
+      "titleSuffix": "",
+      "description": "Everything you need to know about CreatiAds.",
+      "items": [
+        {
+          "key": "what",
+          "question": "What is CreatiAds?",
+          "answer": "CreatiAds is an AI-powered platform that helps you generate high-converting ad creatives, launch campaigns across multiple platforms, and optimize performance automatically."
+        },
+        {
+          "key": "aiImage",
+          "question": "How does the AI Image Generator work?",
+          "answer": "Simply describe your product or provide a URL, and our AI generates professional ad images optimized for your target platform in seconds."
+        },
+        {
+          "key": "platforms",
+          "question": "Which ad platforms are supported?",
+          "answer": "CreatiAds supports Meta (Facebook & Instagram), Google Ads, and TikTok Ads with full automation capabilities."
+        },
+        {
+          "key": "free",
+          "question": "Is there a free plan?",
+          "answer": "Yes! We offer a generous free plan with 50 credits per month, plus free tools like ROAS calculators, ad headline generators, and more."
+        },
+        {
+          "key": "compare",
+          "question": "How does CreatiAds compare to competitors?",
+          "answer": "Unlike other tools that focus only on creative generation, CreatiAds combines AI creative generation with ad automation and optimization — all in one platform."
+        }
+      ]
+    },
+    "testimonials": {
+      "titlePrefix": "Loved by",
+      "titleHighlight": "10,000+",
+      "titleSuffix": "Advertisers",
+      "description": "See what marketers say about CreatiAds.",
+      "items": [
+        {
+          "key": "sarah",
+          "name": "Sarah K.",
+          "role": "E-commerce Owner",
+          "industry": "Fashion",
+          "quote": "CreatiAds cut our ad production time by 80%. We now test 5x more creatives every week.",
+          "avatar": "SK"
+        },
+        {
+          "key": "mike",
+          "name": "Mike L.",
+          "role": "Marketing Director",
+          "industry": "SaaS",
+          "quote": "Managing 20+ clients used to be chaos. Now we deliver fresh creatives for everyone in hours.",
+          "avatar": "ML"
+        },
+        {
+          "key": "jessica",
+          "name": "Jessica T.",
+          "role": "Growth Lead",
+          "industry": "App Marketing",
+          "quote": "Our CPI dropped 50% after switching to CreatiAds AI-generated video ads.",
+          "avatar": "JT"
+        },
+        {
+          "key": "david",
+          "name": "David W.",
+          "role": "Founder",
+          "industry": "Dropshipping",
+          "quote": "I launched 200 product tests in one month. CreatiAds made me a one-person ad agency.",
+          "avatar": "DW"
+        },
+        {
+          "key": "linda",
+          "name": "Linda C.",
+          "role": "Agency Owner",
+          "industry": "Digital Agency",
+          "quote": "Client retention went up 40% — we deliver 10x more creative options now.",
+          "avatar": "LC"
+        },
+        {
+          "key": "tom",
+          "name": "Tom R.",
+          "role": "Media Buyer",
+          "industry": "E-commerce",
+          "quote": "The AI ad optimization alone saved us $15K/month in wasted spend.",
+          "avatar": "TR"
+        }
+      ]
     }
   },
   "pageB": {
@@ -184,6 +415,11 @@
         "No Credit Card Required",
         "Cancel Anytime"
       ]
+    },
+    "cta": {
+      "title": "Ready to Scale Your Ads?",
+      "description": "Join thousands of successful brands using AI-powered ad automation. Start for free today.",
+      "button": "Start Free Trial"
     }
   }
 }

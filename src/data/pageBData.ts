@@ -4,9 +4,10 @@
  */
 
 export const pageBData = {
+  "namespace": "pageB",
   "metadata": {
-    "titleKey": "pageB.metadata.title",
-    "descriptionKey": "pageB.metadata.description"
+    "title": "CreatiAds Studio",
+    "description": "AI-powered creative studio for modern marketers"
   },
   "config": {
     "showNavbar": true,
@@ -16,20 +17,13 @@ export const pageBData = {
   "sections": [
     {
       "type": "hero",
-      "props": {
-        "namespace": "pageB",
-        "badgeKey": "hero.badge",
-        "slogansKey": "hero.slogans",
-        "descriptionKey": "hero.description",
-        "primaryCTA": {
-          "textKey": "hero.cta.primary",
-          "href": "/start-creating"
+       "props": {
+        "cat": {
+          "href": "/pricing"
         },
         "secondaryCTA": {
-          "textKey": "hero.cta.secondary",
-          "href": "/templates"
-        },
-        "trustBadgesKey": "hero.trustBadges"
+          "href": "/tools/ai-image-generator"
+        }
       }
     },
     {

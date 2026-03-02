@@ -4,9 +4,10 @@
  */
 
 export const pageAData = {
+  "namespace": "pageA",
   "metadata": {
-    "titleKey": "pageA.metadata.title",
-    "descriptionKey": "pageA.metadata.description"
+    "title": "CreatiAds Enterprise",
+    "description": "Enterprise-grade AI advertising platform for marketing teams"
   },
   "config": {
     "showNavbar": true,
@@ -17,31 +18,16 @@ export const pageAData = {
     {
       "type": "hero",
       "props": {
-        "namespace": "pageA",
-        "badgeKey": "hero.badge",
-        "slogansKey": "hero.slogans",
-        "descriptionKey": "hero.description",
-        "primaryCTA": {
-          "textKey": "hero.cta.primary",
-          "href": "/contact-sales"
+        "cat": {
+          "href": "/pricing"
         },
         "secondaryCTA": {
-          "textKey": "hero.cta.secondary",
-          "href": "/demo"
-        },
-        "trustBadgesKey": "hero.trustBadges"
+          "href": "/tools/ai-image-generator"
+        }
       }
     },
     {
-      "type": "features",
-      "props": {
-        "namespace": "pageA",
-        "config": {
-          "titleKey": "features.title",
-          "descriptionKey": "features.description"
-        },
-        "showCheckmarks": true
-      }
+      "type": "features"
     }
   ]
 };

@@ -7,8 +7,11 @@ import { ArrowRight, ImageIcon, Rocket, BarChart3 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import workflowVisual from "@/assets/workflow-visual.png";
 
-export default function WorkflowSection() {
-  const t = useTranslations("workflow");
+export default function WorkflowSection({ namespace = "default" }: { namespace?: string }) {
+  const t = useTranslations(namespace);
+  
+  // Workflow section translations are under "workflow" key in default namespace
+  const wt = (key: string) => t(`workflow.${key}`);
 
   const steps = [
     {
@@ -38,10 +41,10 @@ export default function WorkflowSection() {
           className="text-center max-w-2xl mx-auto mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {t("title")}
+            {wt("title")}
           </h2>
           <p className="text-muted-foreground text-lg">
-            {t("description")}
+            {wt("description")}
           </p>
         </motion.div>
 
@@ -54,7 +57,7 @@ export default function WorkflowSection() {
         >
           <Image
             src={workflowVisual}
-            alt={t("workflowAlt")}
+            alt={wt("alt")}
             className="w-full rounded-2xl shadow-card"
             width={1200}
             height={600}
@@ -72,17 +75,17 @@ export default function WorkflowSection() {
               transition={{ delay: i * 0.15 }}
             >
               <Link
-                href={t(`steps.${s.key}.href`)}
+                href={wt(`steps.${s.key}.href`)}
                 className="group block bg-card rounded-xl border p-6 shadow-card hover:shadow-card-hover hover:scale-[1.02] transition-all duration-300 h-full text-center"
               >
                 <div className={`w-14 h-14 rounded-2xl ${s.color} flex items-center justify-center mx-auto mb-4`}>
                   <s.icon className="h-7 w-7" />
                 </div>
-                <span className="text-xs font-bold text-accent uppercase tracking-widest">{t("step")} 0{i + 1}</span>
-                <h3 className="font-display font-bold text-lg mt-2 mb-2">{t(`steps.${s.key}.title`)}</h3>
-                <p className="text-sm text-muted-foreground mb-3">{t(`steps.${s.key}.description`)}</p>
+                <span className="text-xs font-bold text-accent uppercase tracking-widest">{wt("step")} 0{i + 1}</span>
+                <h3 className="font-display font-bold text-lg mt-2 mb-2">{wt(`steps.${s.key}.title`)}</h3>
+                <p className="text-sm text-muted-foreground mb-3">{wt(`steps.${s.key}.description`)}</p>
                 <span className="text-sm font-medium text-primary flex items-center gap-1 justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  {t("explore")} <ArrowRight className="h-3.5 w-3.5" />
+                  {wt("explore")} <ArrowRight className="h-3.5 w-3.5" />
                 </span>
               </Link>
             </motion.div>

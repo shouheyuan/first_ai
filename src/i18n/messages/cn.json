@@ -12,83 +12,6 @@
     "freeTools": "免费工具",
     "blog": "博客"
   },
-  "hero": {
-    "badge": "AI驱动的广告创意平台",
-    "title": "AI时代的广告助手",
-    "description": "生成高转化率的广告创意，在Meta、Google和TikTok上启动营销活动，并自动优化效果——全部在一个平台上完成。",
-    "cta": {
-      "primary": "免费开始试用",
-      "secondary": "试用AI生成器"
-    },
-    "trust": {
-      "noCard": "无需信用卡",
-      "freeCredits": "50个免费积分",
-      "cancel": "随时取消"
-    }
-  },
-  "home": {
-    "trustedBy": "全球10,000+广告商和品牌信赖之选"
-  },
-  "features": {
-    "title": "扩展广告所需的一切",
-    "description": "从创意生成到营销活动优化，CreatiAds提供完整的AI驱动广告平台。",
-    "learnMore": "了解更多",
-    "items": {
-      "aiImage": {
-        "title": "AI图像生成器",
-        "description": "使用AI在几秒钟内创建精美的广告视觉内容。无需设计技能。"
-      },
-      "aiVideo": {
-        "title": "AI视频生成器",
-        "description": "从文本提示或产品URL生成引人注目的视频广告。"
-      },
-      "templates": {
-        "title": "创意模板",
-        "description": "1000+经过验证的广告模板，针对每个平台和格式进行了优化。"
-      },
-      "adLaunch": {
-        "title": "一键广告发布",
-        "description": "只需单击一次即可在Meta、Google和TikTok上启动营销活动。"
-      },
-      "optimization": {
-        "title": "AI广告优化",
-        "description": "自动优化出价、预算和定向，以获得最大ROAS。"
-      },
-      "multiPlatform": {
-        "title": "多平台自动化",
-        "description": "从一个统一的仪表板管理您的所有广告账户。"
-      }
-    }
-  },
-  "workflow": {
-    "title": "AI广告闭环",
-    "description": "从创意到营销活动再到优化——一个无缝的AI工作流程。",
-    "workflowAlt": "AI创意 → 广告发布 → 广告优化 闭环工作流程",
-    "step": "步骤",
-    "explore": "探索",
-    "steps": {
-      "creative": {
-        "title": "AI创意",
-        "description": "使用AI在几秒钟内生成精美的广告图片和视频。",
-        "href": "/tools/ai-image-generator"
-      },
-      "publishing": {
-        "title": "AI广告发布",
-        "description": "一键在Meta、Google和TikTok上发布。",
-        "href": "/one-click-ad-launch"
-      },
-      "running": {
-        "title": "AI广告运行",
-        "description": "24/7自动优化以获得最大ROAS。",
-        "href": "/ai-ad-optimization"
-      }
-    }
-  },
-  "cta": {
-    "title": "准备好将您的广告效果提升10倍了吗？",
-    "description": "加入数千名使用CreatiAds的营销人员的行列，生成更好的创意，更快启动，并实现盈利增长。",
-    "button": "免费开始使用"
-  },
   "pricing": {
     "title": "简单透明的定价",
     "description": "免费开始。随增长扩展。无隐藏费用。",
@@ -118,6 +41,368 @@
     "description": "AI驱动的广告创意生成和营销活动自动化平台。",
     "copyright": "© {year} CreatiAds。保留所有权利。"
   },
+  "default": {
+    "hero": {
+      "badge": "AI驱动的广告创意平台",
+      "title": "AI时代的广告助手",
+      "description": "生成高转化率的广告创意，在Meta、Google和TikTok上启动营销活动，并自动优化效果——全部在一个平台上完成。",
+      "slogans": [
+        {
+          "line1": "您的广告助手",
+          "highlight": "AI时代"
+        },
+        {
+          "line1": "您就是自己的",
+          "highlight": "广告专家"
+        },
+        {
+          "line1": "无惧",
+          "highlight": "Meta广告"
+        },
+        {
+          "line1": "创造惊艳广告",
+          "highlight": "快10倍"
+        }
+      ],
+      "cta": {
+        "primary": "免费开始试用",
+        "secondary": "试用AI生成器"
+      },
+      "trustBadges": [
+        "无需信用卡",
+        "50个免费积分",
+        "随时取消"
+      ]
+    },
+    "logoCloud": {
+      "title": "全球10,000+广告商和品牌信赖之选"
+    },
+    "features": {
+      "title": "扩展广告所需的一切",
+      "description": "从创意生成到营销活动优化，CreatiAds提供完整的AI驱动广告平台。",
+      "learnMore": "了解更多",
+      "items": [
+        {
+          "key": "aiImage",
+          "color": "text-primary",
+          "title": "AI图像生成器",
+          "href": "/tools/ai-image-generator",
+          "description": "使用AI在几秒钟内创建精美的广告视觉内容。无需设计技能。"
+        },
+        {
+          "key": "aiVideo",
+          "color": "text-accent",
+          "title": "AI视频生成器",
+          "href": "/tools/ai-video-generator",
+          "description": "从文本提示或产品URL生成引人注目的视频广告。"
+        },
+        {
+          "key": "templates",
+          "title": "创意模板",
+          "description": "1000+经过验证的广告模板，针对每个平台和格式进行了优化。"
+        },
+        {
+          "key": "adLaunch",
+          "title": "一键广告发布",
+          "description": "只需单击一次即可在Meta、Google和TikTok上启动营销活动。"
+        },
+        {
+          "key": "optimization",
+          "title": "AI广告优化",
+          "description": "自动优化出价、预算和定向，以获得最大ROAS。"
+        },
+        {
+          "key": "multiPlatform",
+          "title": "多平台自动化",
+          "description": "从一个统一的仪表板管理您的所有广告账户。"
+        }
+      ]
+    },
+    "workflow": {
+      "title": "AI广告闭环",
+      "description": "从创意到营销活动再到优化——一个无缝的AI工作流程。",
+      "alt": "AI创意 → 广告发布 → 广告优化 闭环工作流程",
+      "step": "步骤",
+      "explore": "探索",
+      "steps": {
+        "creative": {
+          "title": "AI创意",
+          "description": "使用AI在几秒钟内生成精美的广告图片和视频。",
+          "href": "/tools/ai-image-generator"
+        },
+        "publishing": {
+          "title": "AI广告发布",
+          "description": "一键在Meta、Google和TikTok上发布。",
+          "href": "/one-click-ad-launch"
+        },
+        "running": {
+          "title": "AI广告运行",
+          "description": "24/7自动优化以获得最大ROAS。",
+          "href": "/ai-ad-optimization"
+        }
+      }
+    },
+    "featureDeepDive": {
+      "title": "完整的AI广告闭环",
+      "subtitle": "从创意生成到营销活动启动，再到持续优化——一个智能平台驱动一切。",
+      "stepLabel": "步骤",
+      "features": {
+        "aiCreative": {
+          "title": "AI创意生成",
+          "description": "在几秒钟内生成引人注目的广告创意。我们的AI了解您的品牌、受众和目标，为每种格式制作高转化率的图片和视频。",
+          "bullets": [
+            "一键生成50+个广告变体",
+            "支持Meta、Google、TikTok格式",
+            "每次都能保持品牌一致的视觉效果"
+          ],
+          "imgAlt": "显示多种广告格式的AI创意生成仪表板",
+          "ctaLabel": "试用AI创意"
+        },
+        "adLaunch": {
+          "title": "一键广告发布",
+          "description": "通过一次点击即可在Meta、Google和TikTok上发布营销活动。无需在不同广告管理器之间切换——CreatiAds自动处理定向、预算和版位。",
+          "bullets": [
+            "几秒钟内跨平台发布",
+            "AI优化的受众定向",
+            "自动预算分配"
+          ],
+          "imgAlt": "带平台选择的一键广告发布仪表板",
+          "ctaLabel": "立即发布广告"
+        },
+        "adOptimization": {
+          "title": "AI广告优化",
+          "description": "我们的AI全天候监控表现，并自动调整出价、预算和创意，以最大化您的ROAS——让您专注于策略，而非电子表格。",
+          "bullets": [
+            "实时ROAS优化",
+            "自动出价和预算调整",
+            "AI驱动的创意轮换"
+          ],
+          "imgAlt": "带实时表现图表的AI优化仪表板",
+          "ctaLabel": "更智能地优化"
+        }
+      }
+    },
+    "showcase": {
+      "titlePrefix": "适用于",
+      "titleHighlight": "每个行业",
+      "description": "查看不同垂直领域的AI生成广告真实示例。",
+      "heroAlt": "跨行业的AI生成广告创意",
+      "industryAlt": "{industry}的AI广告",
+      "industries": [
+        {
+          "key": "ecommerce",
+          "label": "电子商务"
+        },
+        {
+          "key": "food",
+          "label": "餐饮配送"
+        },
+        {
+          "key": "fashion",
+          "label": "时尚美妆"
+        }
+      ]
+    },
+    "comparison": {
+      "titlePrefix": "为什么品牌选择",
+      "titleHighlight": "CreatiAds",
+      "titleSuffix": "",
+      "description": "看看我们在功能和AI驱动性能方面如何超越传统广告平台。",
+      "featureColumn": "功能",
+      "competitors": [
+        {
+          "key": "creatiads",
+          "name": "CreatiAds",
+          "highlight": true
+        },
+        {
+          "key": "traditional",
+          "name": "传统平台",
+          "highlight": false
+        }
+      ],
+      "features": [
+        {
+          "key": "aiCreative",
+          "name": "AI创意生成",
+          "values": [
+            true,
+            false
+          ]
+        },
+        {
+          "key": "crossPlatform",
+          "name": "跨平台发布",
+          "values": [
+            true,
+            false
+          ]
+        },
+        {
+          "key": "autoOptimization",
+          "name": "自动优化",
+          "values": [
+            true,
+            false
+          ]
+        },
+        {
+          "key": "creativeTime",
+          "name": "创意制作时间",
+          "values": [
+            "几秒钟",
+            "数小时/数天"
+          ]
+        },
+        {
+          "key": "adCost",
+          "name": "每广告成本",
+          "values": [
+            "降低80%",
+            "高固定成本"
+          ]
+        },
+        {
+          "key": "testScale",
+          "name": "测试和扩展",
+          "values": [
+            "无限创意测试",
+            "有限"
+          ]
+        }
+      ]
+    },
+    "useCases": {
+      "titlePrefix": "适用于",
+      "titleHighlight": "每个行业",
+      "description": "查看不同垂直领域的AI生成广告真实示例。",
+      "explore": "探索",
+      "items": [
+        {
+          "key": "ecommerce",
+          "iconName": "ShoppingBag",
+          "title": "电子商务",
+          "description": "生成将购物者转化为买家的产品广告。",
+          "href": "/e-commerce"
+        },
+        {
+          "key": "dropshipping",
+          "iconName": "Rocket",
+          "title": "代发货",
+          "description": "通过即时广告创意生成更快地测试产品。",
+          "href": "/dropshipping"
+        },
+        {
+          "key": "appMarketing",
+          "iconName": "BarChart3",
+          "title": "应用营销",
+          "description": "通过引人注目的应用安装广告推动下载。",
+          "href": "/app-marketing"
+        },
+        {
+          "key": "agencies",
+          "iconName": "Users",
+          "title": "广告代理",
+          "description": "在所有客户中扩展创意产出。",
+          "href": "/agencies"
+        }
+      ]
+    },
+    "faq": {
+      "titlePrefix": "常见",
+      "titleHighlight": "问题",
+      "titleSuffix": "",
+      "description": "关于 CreatiAds 您需要了解的一切。",
+      "items": [
+        {
+          "key": "what",
+          "question": "CreatiAds 是什么？",
+          "answer": "CreatiAds 是一个 AI 驱动的平台，帮助您生成高转化率的广告创意，在多个平台上启动营销活动，并自动优化性能。"
+        },
+        {
+          "key": "aiImage",
+          "question": "AI 图像生成器如何工作？",
+          "answer": "只需描述您的产品或提供 URL，我们的 AI 就会在几秒钟内为您的目标平台生成专业的广告图像。"
+        },
+        {
+          "key": "platforms",
+          "question": "支持哪些广告平台？",
+          "answer": "CreatiAds 支持 Meta（Facebook 和 Instagram）、Google 广告和 TikTok 广告，并提供完整的自动化功能。"
+        },
+        {
+          "key": "free",
+          "question": "有免费计划吗？",
+          "answer": "是的！我们提供慷慨的免费计划，每月 50 个积分，以及免费工具，如 ROAS 计算器、广告标题生成器等。"
+        },
+        {
+          "key": "compare",
+          "question": "CreatiAds 与竞争对手相比如何？",
+          "answer": "与其他仅专注于创意生成的工具不同，CreatiAds 将 AI 创意生成与广告自动化和优化结合在一起 —— 全部在一个平台上。"
+        }
+      ]
+    },
+    "testimonials": {
+      "titlePrefix": "受",
+      "titleHighlight": "10,000+",
+      "titleSuffix": "广告商喜爱",
+      "description": "看看营销人员对 CreatiAds 的评价。",
+      "items": [
+        {
+          "key": "sarah",
+          "name": "Sarah K.",
+          "role": "电商店主",
+          "industry": "时尚",
+          "quote": "CreatiAds 将我们的广告制作时间缩短了 80%。我们现在每周测试的创意数量是原来的 5 倍。",
+          "avatar": "SK"
+        },
+        {
+          "key": "mike",
+          "name": "Mike L.",
+          "role": "市场总监",
+          "industry": "SaaS",
+          "quote": "管理 20 多个客户曾经是混乱的。现在我们可以在几小时内为每个人提供新鲜的创意。",
+          "avatar": "ML"
+        },
+        {
+          "key": "jessica",
+          "name": "Jessica T.",
+          "role": "增长负责人",
+          "industry": "应用营销",
+          "quote": "切换到 CreatiAds AI 生成的视频广告后，我们的单次安装成本下降了 50%。",
+          "avatar": "JT"
+        },
+        {
+          "key": "david",
+          "name": "David W.",
+          "role": "创始人",
+          "industry": "代发货",
+          "quote": "我一个月推出了 200 个产品测试。CreatiAds 让我成为了一人广告代理公司。",
+          "avatar": "DW"
+        },
+        {
+          "key": "linda",
+          "name": "Linda C.",
+          "role": "代理公司老板",
+          "industry": "数字代理",
+          "quote": "客户留存率上升了 40% —— 我们现在提供的创意选择是原来的 10 倍。",
+          "avatar": "LC"
+        },
+        {
+          "key": "tom",
+          "name": "Tom R.",
+          "role": "媒介购买员",
+          "industry": "电子商务",
+          "quote": "仅 AI 广告优化一项就为我们每月节省了 15,000 美元的浪费支出。",
+          "avatar": "TR"
+        }
+      ]
+    },
+    "cta": {
+      "title": "准备好扩展您的广告了吗？",
+      "description": "立即开始使用 CreatiAds，加入数千个使用 AI 驱动的广告自动化的成功品牌。",
+      "button": "免费开始试用"
+    }
+  },
   "pageA": {
     "title": "企业级功能",
     "description": "为企业团队打造的专业级AI广告功能",
@@ -127,6 +412,7 @@
     },
     "hero": {
       "badge": "企业级AI平台 页面 A",
+      "description": "通过AI驱动的广告创意生成、自动化营销活动管理和实时性能优化，赋能您的营销团队，实现企业级规模增长。",
       "slogans": [
         {
           "line1": "规模化",
@@ -141,7 +427,6 @@
           "highlight": "安全保障"
         }
       ],
-      "description": "通过AI驱动的广告创意生成、自动化营销活动管理和实时性能优化，赋能您的营销团队，实现企业级规模增长。",
       "cta": {
         "primary": "联系销售",
         "secondary": "观看演示"
