@@ -12,6 +12,7 @@ interface LanguageSwitcherProps {
 }
 
 export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
+  console.log(currentLocale)
   const router = useRouter();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
@@ -71,9 +72,8 @@ export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
               <button
                 key={locale}
                 onClick={() => handleLocaleChange(locale)}
-                className={`w-full px-3 py-2 text-sm flex items-center gap-2 hover:bg-secondary transition-colors ${
-                  currentLocale === locale ? "text-primary" : "text-foreground"
-                }`}
+                className={`w-full px-3 py-2 text-sm flex items-center gap-2 hover:bg-secondary transition-colors ${currentLocale === locale ? "text-primary" : "text-foreground"
+                  }`}
               >
                 <span>{localeFlags[locale]}</span>
                 <span>{localeLabels[locale]}</span>

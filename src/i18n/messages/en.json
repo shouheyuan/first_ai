@@ -372,6 +372,65 @@
       ]
     }
   },
+  "pricing": {
+    "metadata": {
+      "title": "Pricing - CreatiAds",
+      "description": "Choose the right CreatiAds pricing plan for you. Start free and scale as you grow."
+    },
+    "hero": {
+      "titlePrefix": "Simple, Transparent",
+      "titleHighlight": "Pricing",
+      "description": "Start free. Scale as you grow. No hidden fees."
+    },
+    "plans": {
+      "free": {
+        "name": "Free",
+        "price": "$0",
+        "period": "forever",
+        "description": "Get started with AI ad tools",
+        "features": [
+          "50 credits/month",
+          "AI Image Generator",
+          "Ad Copy Tools",
+          "Free Calculators",
+          "Basic Templates"
+        ],
+        "cta": "Get Started"
+      },
+      "pro": {
+        "name": "Pro",
+        "price": "$49",
+        "period": "/month",
+        "description": "For growing businesses and marketers",
+        "badge": "Most Popular",
+        "features": [
+          "500 credits/month",
+          "All AI Generators",
+          "AI Video Generator",
+          "One Click Ad Launch",
+          "Meta & Google Automation",
+          "Priority Support"
+        ],
+        "cta": "Start Free Trial"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "Custom",
+        "period": "",
+        "description": "For agencies and large teams",
+        "features": [
+          "Unlimited credits",
+          "All Pro features",
+          "TikTok Automation",
+          "AI Ad Optimization",
+          "Custom Integrations",
+          "Dedicated Account Manager",
+          "SLA & Priority Support"
+        ],
+        "cta": "Contact Sales"
+      }
+    }
+  },
   "pageA": {
     "title": "Enterprise Features",
     "description": "Professional-grade AI advertising features for enterprise teams",

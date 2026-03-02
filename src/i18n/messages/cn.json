@@ -403,6 +403,65 @@
       "button": "免费开始试用"
     }
   },
+  "pricing": {
+    "metadata": {
+      "title": "定价 - CreatiAds",
+      "description": "选择适合您的CreatiAds定价方案。从免费开始，随业务增长扩展。"
+    },
+    "hero": {
+      "titlePrefix": "简单透明的",
+      "titleHighlight": "定价",
+      "description": "免费开始。随增长扩展。无隐藏费用。"
+    },
+    "plans": {
+      "free": {
+        "name": "免费版",
+        "price": "¥0",
+        "period": "永久",
+        "description": "开始使用AI广告工具",
+        "features": [
+          "每月50积分",
+          "AI图像生成器",
+          "广告文案工具",
+          "免费计算器",
+          "基础模板"
+        ],
+        "cta": "立即开始"
+      },
+      "pro": {
+        "name": "专业版",
+        "price": "¥349",
+        "period": "/月",
+        "description": "适合成长中的企业和营销人员",
+        "badge": "最受欢迎",
+        "features": [
+          "每月500积分",
+          "全部AI生成器",
+          "AI视频生成器",
+          "一键广告发布",
+          "Meta和Google自动化",
+          "优先支持"
+        ],
+        "cta": "开始免费试用"
+      },
+      "enterprise": {
+        "name": "企业版",
+        "price": "定制",
+        "period": "",
+        "description": "适合代理机构和大型团队",
+        "features": [
+          "无限积分",
+          "全部专业版功能",
+          "TikTok自动化",
+          "AI广告优化",
+          "自定义集成",
+          "专属客户经理",
+          "SLA和优先支持"
+        ],
+        "cta": "联系销售"
+      }
+    }
+  },
   "pageA": {
     "title": "企业级功能",
     "description": "为企业团队打造的专业级AI广告功能",
