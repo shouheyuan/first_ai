@@ -37,7 +37,7 @@ interface SchemaRendererProps {
 }
 
 export default function SchemaRenderer({ schema }: SchemaRendererProps) {
-  const { namespace, config, sections } = schema;
+  const { config, sections } = schema;
 
   return (
     <main className={config?.className || "flex-1 w-full"}>
@@ -52,7 +52,7 @@ export default function SchemaRenderer({ schema }: SchemaRendererProps) {
         return (
           <Component
             key={`${section.type}-${index}`}
-            namespace={namespace}
+            namespace={section.namespace}
             data={section.props}
           />
         );

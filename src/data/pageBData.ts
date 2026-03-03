@@ -17,7 +17,7 @@ export const pageBData = {
   "sections": [
     {
       "type": "hero",
-       "props": {
+      "props": {
         "cat": {
           "href": "/pricing"
         },
@@ -28,6 +28,7 @@ export const pageBData = {
     },
     {
       "type": "features",
+      "namespace": "default",
       "props": {
         "namespace": "pageB",
         "showCheckmarks": false

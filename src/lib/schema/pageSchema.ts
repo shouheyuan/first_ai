@@ -83,7 +83,7 @@ export interface CTASectionProps {
 }
 
 // Section Types - 必须是string类型以便兼容JSON
-export type SectionType = 
+export type SectionType =
   | 'hero'
   | 'logoCloud'
   | 'featureCards'
@@ -104,11 +104,11 @@ export interface Section {
 
 // Page Schema Interface
 export interface PageSchema {
-  namespace?: string;
   metadata?: PageMetadata;
   config?: PageConfig;
   sections: Array<{
     type: string;
+    namespace?: string;
     props?: Record<string, unknown>;
   }>;
 }

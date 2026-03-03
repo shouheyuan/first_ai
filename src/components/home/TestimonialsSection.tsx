@@ -10,7 +10,7 @@ interface TestimonialsSectionProps {
 
 export default function TestimonialsSection({ namespace = "default" }: TestimonialsSectionProps) {
   const t = useTranslations(namespace);
-  
+
   // Helper function for testimonials translations
   const tt = (key: string) => t(`testimonials.${key}`);
 
