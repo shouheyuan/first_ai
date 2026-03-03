@@ -6,13 +6,12 @@ import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
 
-interface PricingPageProps {
-  params: { locale: string };
-}
-
-export default function PricingPage({ params: { locale } }: PricingPageProps) {
-  console.log(locale, 'locale')
+export default function PricingPage() {
+  const params = useParams();
+  const locale = (params.locale as string) || "en";
+  
   const t = useTranslations("pricing");
 
   const plans = [

@@ -12,7 +12,6 @@ interface LanguageSwitcherProps {
 }
 
 export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
-  console.log(currentLocale)
   const router = useRouter();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
