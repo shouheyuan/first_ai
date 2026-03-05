@@ -28,9 +28,7 @@ export default async function Home({
         <LogoCloud />
         <FeatureCards />
         <FeatureDeepDive />
-        <WorkflowSection />
         <ShowcaseSection />
-        <UseCasesSection />
         <TestimonialsSection />
         <ComparisonSection />
         <FAQSection />

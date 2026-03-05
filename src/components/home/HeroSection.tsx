@@ -38,7 +38,6 @@ export default function HeroSection({
   // 使用命名空间获取翻译
   const t = useTranslations(namespace);
 
-
   // 从 config 获取 key，然后通过 t() 获取实际文本
   const badge = t("hero.badge");
   const description = t("hero.description");
@@ -117,7 +116,7 @@ export default function HeroSection({
             </div>
 
             {/* Description */}
-            <p className="text-lg text-white/70 max-w-lg mb-8">{description}</p>
+            <p className="text-lg text-white max-w-lg mb-8">{description}</p>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">

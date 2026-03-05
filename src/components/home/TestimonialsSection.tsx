@@ -25,7 +25,7 @@ export default function TestimonialsSection({ namespace = "default" }: Testimoni
   }>;
 
   return (
-    <section className="py-20 lg:py-28 bg-background">
+    <section id="testimonials" className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -39,7 +39,7 @@ export default function TestimonialsSection({ namespace = "default" }: Testimoni
           <p className="text-muted-foreground text-lg">{tt("description")}</p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto">
           {testimonialsData.map((testimonial, i) => (
             <motion.div
               key={testimonial.key}
@@ -54,7 +54,7 @@ export default function TestimonialsSection({ namespace = "default" }: Testimoni
                   <Star key={j} className="h-4 w-4 text-accent fill-accent" />
                 ))}
               </div>
-              <p className="text-sm text-muted-foreground mb-4 italic leading-relaxed">"{testimonial.quote}"</p>
+              <p className="text-sm text-muted-foreground mb-4 italic leading-relaxed">&ldquo;{testimonial.quote}&rdquo;</p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xs font-bold text-primary">
                   {testimonial.avatar}

@@ -1,10 +1,9 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { locales, type Locale, localeLabels, localeFlags, defaultLocale } from "@/i18n/config";
+import { locales, type Locale, localeLabels, localeFlags } from "@/i18n/config";
 import { usePathname, useRouter } from "@/i18n/navigation";
-import { Button } from "@/components/ui/button";
-import { Globe } from "lucide-react";
+import { Globe, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface LanguageSwitcherProps {
@@ -18,8 +17,6 @@ export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleLocaleChange = (newLocale: Locale) => {
-    // usePathname 从 next-intl/navigation 返回的是不带 locale 前缀的路径
-    // router.replace 会自动处理 locale 前缀的添加/移除
     router.replace(pathname, { locale: newLocale });
     setIsOpen(false);
   };
@@ -52,35 +49,36 @@ export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <Button variant="ghost" size="sm" className="gap-2 min-w-[100px] justify-start">
-        <Globe className="h-4 w-4 shrink-0" />
+      <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors rounded-md cursor-pointer">
         <span className="hidden sm:inline shrink-0">{localeFlags[currentLocale]}</span>
-        <span className="hidden md:inline w-12 text-left truncate">{localeLabels[currentLocale]}</span>
-      </Button>
+        <span className="hidden md:inline text-left truncate">{localeLabels[currentLocale]}</span>
+        <ChevronDown className="h-3.5 w-3.5" />
+      </button>
 
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -8, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -8, scale: 0.95 }}
-            transition={{ duration: 0.15, ease: "easeOut" }}
-            className="absolute top-full right-0 mt-1 w-40 bg-card rounded-lg border shadow-card-hover py-1 z-50"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="absolute top-full left-0 mt-1 pt-2 z-50"
           >
-            {locales.map((locale) => (
-              <button
-                key={locale}
-                onClick={() => handleLocaleChange(locale)}
-                className={`w-full px-3 py-2 text-sm flex items-center gap-2 hover:bg-secondary transition-colors ${currentLocale === locale ? "text-primary" : "text-foreground"
-                  }`}
-              >
-                <span>{localeFlags[locale]}</span>
-                <span>{localeLabels[locale]}</span>
-                {currentLocale === locale && (
-                  <span className="ml-auto text-primary">✓</span>
-                )}
-              </button>
-            ))}
+            <div className="bg-card rounded-lg border shadow-card-hover p-2 min-w-[160px]">
+              {locales.map((locale) => (
+                <button
+                  key={locale}
+                  onClick={() => handleLocaleChange(locale)}
+                  className={`w-[120px] w-full px-3 py-2 text-sm rounded-md flex items-center gap-2 hover:bg-secondary transition-colors cursor-pointer ${currentLocale === locale ? "text-primary bg-secondary/50" : "text-foreground"}`}
+                >
+                  <span>{localeFlags[locale]}</span>
+                  <span>{localeLabels[locale]}</span>
+                  {currentLocale === locale && (
+                    <span className="ml-auto text-primary">✓</span>
+                  )}
+                </button>
+              ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

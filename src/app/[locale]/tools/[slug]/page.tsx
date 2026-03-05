@@ -2,7 +2,14 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ChevronLeft, ChevronRight, Upload, Sparkles, Image as ImageIcon, Video, Layers, BookOpen, Eye, EyeOff } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Upload, Sparkles, Image as ImageIcon, Video, Layers, BookOpen, Eye, EyeOff, X } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import Image from "next/image";
@@ -77,9 +84,9 @@ export default function ToolPage() {
   const credits = numOutputs * 8;
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="h-screen flex flex-col overflow-hidden">
       <Navbar locale={locale} />
-      <div className="flex-1 flex">
+      <div className="flex-1 flex overflow-hidden">
         {/* Left: Collapsible Sidebar Navigation */}
         <AnimatePresence initial={false}>
           {sidebarOpen && (
@@ -129,7 +136,7 @@ export default function ToolPage() {
         </AnimatePresence>
 
         {/* Main Content Area */}
-        <div className="flex-1 flex flex-col lg:flex-row min-h-[calc(100vh-4rem)]">
+        <div className="flex-1 flex flex-col lg:flex-row min-h-[calc(100vh-4rem)] h-[calc(100vh-4rem)] overflow-hidden lg:overflow-visible">
           {/* Toggle sidebar when collapsed */}
           {!sidebarOpen && (
             <button
@@ -141,31 +148,33 @@ export default function ToolPage() {
           )}
 
           {/* Middle: Prompt Form */}
-          <div className="w-full lg:w-[400px] xl:w-[440px] shrink-0 p-6 border-r overflow-y-auto">
-            <motion.div
-              key={title}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-2xl">{icon}</span>
-                <h1 className="text-xl font-bold">{title}</h1>
-              </div>
+          <div className="w-full lg:w-[400px] xl:w-[440px] shrink-0 border-r flex flex-col h-full">
+            <div className="flex-1 overflow-y-auto p-6">
+              <motion.div
+                key={title}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-2xl">{icon}</span>
+                  <h1 className="text-xl font-bold">{title}</h1>
+                </div>
 
-              <div className="space-y-5">
+                <div className="space-y-5">
                 {/* Model Selection */}
                 <div>
                   <label className="text-sm font-medium mb-1.5 block">AI Model</label>
-                  <select
-                    value={model}
-                    onChange={(e) => setModel(e.target.value)}
-                    className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
-                  >
-                    {aiModels.map((m) => (
-                      <option key={m} value={m}>{m}</option>
-                    ))}
-                  </select>
+                  <Select value={model} onValueChange={setModel}>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Select AI Model" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {aiModels.map((m) => (
+                        <SelectItem key={m} value={m}>{m}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
 
                 {/* Reference Image Upload */}
@@ -175,8 +184,15 @@ export default function ToolPage() {
                   </label>
                   <div className="flex flex-wrap gap-2">
                     {uploadedImages.map((img, i) => (
-                      <div key={i} className="w-16 h-16 rounded-lg border bg-secondary/50 flex items-center justify-center overflow-hidden">
+                      <div key={i} className="w-16 h-16 rounded-lg border bg-secondary/50 flex items-center justify-center relative group">
                         <ImageIcon className="h-6 w-6 text-primary/40" />
+                        <button
+                          onClick={() => setUploadedImages(uploadedImages.filter((_, index) => index !== i))}
+                          className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-destructive text-destructive-foreground rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-md z-10"
+                          title="Remove image"
+                        >
+                          <X className="h-3 w-3" />
+                        </button>
                       </div>
                     ))}
                     {uploadedImages.length < 5 && (
@@ -210,29 +226,36 @@ export default function ToolPage() {
                 {/* Resolution */}
                 <div>
                   <label className="text-sm font-medium mb-1.5 block">Resolution</label>
-                  <select
-                    value={resolution}
-                    onChange={(e) => setResolution(e.target.value)}
-                    className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
-                  >
-                    {resolutions.map((r) => (
-                      <option key={r} value={r}>{r}</option>
-                    ))}
-                  </select>
+                  <Select value={resolution} onValueChange={setResolution}>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Select Resolution" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {resolutions.map((r) => (
+                        <SelectItem key={r} value={r}>{r}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
 
                 {/* Number of Outputs */}
                 <div>
                   <label className="text-sm font-medium mb-1.5 block">Number of Outputs</label>
-                  <select
-                    value={numOutputs}
-                    onChange={(e) => setNumOutputs(Number(e.target.value))}
-                    className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
+                  <Select
+                    value={numOutputs.toString()}
+                    onValueChange={(value) => setNumOutputs(Number(value))}
                   >
-                    {[1, 2, 3, 4].map((n) => (
-                      <option key={n} value={n}>{n}</option>
-                    ))}
-                  </select>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Select number of outputs" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {[1, 2, 3, 4].map((n) => (
+                        <SelectItem key={n} value={n.toString()}>
+                          {n}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
 
                 {/* Public Visibility Toggle */}
@@ -252,16 +275,19 @@ export default function ToolPage() {
                   <span className="font-display font-bold text-primary">{credits} credits</span>
                 </div>
 
-                {/* Generate Button */}
-                <button className="w-full bg-accent-gradient text-accent-foreground px-6 py-3 rounded-lg font-semibold hover:scale-[1.02] transition-transform shadow-md text-sm">
-                  Generate
-                </button>
               </div>
             </motion.div>
           </div>
+          {/* Generate Button - Fixed at bottom */}
+          <div className="p-6 border-t bg-background">
+            <button className="w-full bg-accent-gradient text-accent-foreground px-6 py-3 rounded-lg font-semibold hover:scale-[1.02] transition-transform shadow-md text-sm">
+              Generate
+            </button>
+          </div>
+        </div>
 
-          {/* Right: Result Preview */}
-          <div className="flex-1 p-6 lg:p-8 bg-muted/30 overflow-y-auto">
+        {/* Right: Result Preview */}
+        <div className="flex-1 p-6 lg:p-8 bg-muted/30 overflow-y-auto">
             <motion.div
               key={title + "-preview"}
               initial={{ opacity: 0 }}
@@ -281,7 +307,7 @@ export default function ToolPage() {
                 <div className="space-y-6">
                   {/* Example Showcase */}
                   <div>
-                    <h3 className="font-display font-bold text-xl mb-1 text-gradient-accent">Reference Examples</h3>
+                    <h3 className="font-display font-bold text-xl mb-1">Reference Examples</h3>
                     <p className="text-sm text-muted-foreground mb-4">See what you can create with {title}</p>
                   </div>
 

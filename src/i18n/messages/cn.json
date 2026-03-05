@@ -10,7 +10,27 @@
     "solutions": "解决方案",
     "pricing": "定价",
     "freeTools": "免费工具",
-    "blog": "博客"
+    "blog": "博客",
+    "generators": "生成器",
+    "aiModels": "AI模型",
+    "aiImageGenerator": "AI图像生成器",
+    "aiVideoGenerator": "AI视频生成器",
+    "creativeTemplates": "创意模板",
+    "adCreativeLibrary": "广告创意库",
+    "oneClickAdLaunch": "一键广告发布",
+    "aiAdOptimization": "AI广告优化",
+    "metaAdsAutomation": "Meta广告自动化",
+    "googleAdsAutomation": "Google广告自动化",
+    "tiktokAdsAutomation": "TikTok广告自动化",
+    "byGoal": "按目标",
+    "byIndustry": "按行业",
+    "generateMoreCreatives": "生成更多创意",
+    "launchAdsFaster": "更快发布广告",
+    "scaleAdsAutomatically": "自动扩展广告",
+    "ecommerce": "电子商务",
+    "dropshipping": "代发货",
+    "appMarketing": "应用营销",
+    "agencies": "代理机构"
   },
   "pricing": {
     "title": "简单透明的定价",
@@ -84,14 +104,12 @@
       "items": [
         {
           "key": "aiImage",
-          "color": "text-primary",
           "title": "AI图像生成器",
           "href": "/tools/ai-image-generator",
           "description": "使用AI在几秒钟内创建精美的广告视觉内容。无需设计技能。"
         },
         {
           "key": "aiVideo",
-          "color": "text-accent",
           "title": "AI视频生成器",
           "href": "/tools/ai-video-generator",
           "description": "从文本提示或产品URL生成引人注目的视频广告。"
@@ -204,8 +222,7 @@
       ]
     },
     "comparison": {
-      "titlePrefix": "为什么品牌选择",
-      "titleHighlight": "CreatiAds",
+      "titlePrefix": "为什么品牌选择CreatiAds",
       "titleSuffix": "",
       "description": "看看我们在功能和AI驱动性能方面如何超越传统广告平台。",
       "featureColumn": "功能",
@@ -309,8 +326,7 @@
       ]
     },
     "faq": {
-      "titlePrefix": "常见",
-      "titleHighlight": "问题",
+      "titlePrefix": "常见问题",
       "titleSuffix": "",
       "description": "关于 CreatiAds 您需要了解的一切。",
       "items": [

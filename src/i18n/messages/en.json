@@ -10,7 +10,27 @@
     "solutions": "Solutions",
     "pricing": "Pricing",
     "freeTools": "Free Tools",
-    "blog": "Blog"
+    "blog": "Blog",
+    "generators": "Generators",
+    "aiModels": "AI Models",
+    "aiImageGenerator": "AI Image Generator",
+    "aiVideoGenerator": "AI Video Generator",
+    "creativeTemplates": "Creative Templates",
+    "adCreativeLibrary": "Ad Creative Library",
+    "oneClickAdLaunch": "One Click Ad Launch",
+    "aiAdOptimization": "AI Ad Optimization",
+    "metaAdsAutomation": "Meta Ads Automation",
+    "googleAdsAutomation": "Google Ads Automation",
+    "tiktokAdsAutomation": "TikTok Ads Automation",
+    "byGoal": "By Goal",
+    "byIndustry": "By Industry",
+    "generateMoreCreatives": "Generate More Creatives",
+    "launchAdsFaster": "Launch Ads Faster",
+    "scaleAdsAutomatically": "Scale Ads Automatically",
+    "ecommerce": "E-commerce",
+    "dropshipping": "Dropshipping",
+    "appMarketing": "App Marketing",
+    "agencies": "Agencies"
   },
   "default": {
     "hero": {
@@ -174,7 +194,6 @@
     },
     "comparison": {
       "titlePrefix": "Why Brands Choose",
-      "titleHighlight": "CreatiAds",
       "titleSuffix": "",
       "description": "See how we stack up against traditional ad platforms in features and AI-powered performance.",
       "featureColumn": "Features",
@@ -339,35 +358,35 @@
       ]
     },
     "faq": {
-      "titlePrefix": "常见",
-      "titleHighlight": "问题",
+      "titlePrefix": "Frequently Asked",
+      "titleHighlight": "Questions",
       "titleSuffix": "",
-      "description": "关于 CreatiAds 您需要了解的一切。",
+      "description": "Everything you need to know about CreatiAds.",
       "items": [
         {
           "key": "what",
-          "question": "CreatiAds 是什么？",
-          "answer": "CreatiAds 是一个 AI 驱动的平台，帮助您生成高转化率的广告创意，在多个平台上启动营销活动，并自动优化性能。"
+          "question": "What is CreatiAds?",
+          "answer": "CreatiAds is an AI-powered platform that helps you generate high-converting ad creatives, launch campaigns across multiple platforms, and optimize performance automatically."
         },
         {
           "key": "aiImage",
-          "question": "AI 图像生成器如何工作？",
-          "answer": "只需描述您的产品或提供 URL，我们的 AI 就会在几秒钟内为您的目标平台生成专业的广告图像。"
+          "question": "How does the AI Image Generator work?",
+          "answer": "Simply describe your product or provide a URL, and our AI generates professional ad images optimized for your target platform in seconds."
         },
         {
           "key": "platforms",
-          "question": "支持哪些广告平台？",
-          "answer": "CreatiAds 支持 Meta（Facebook 和 Instagram）、Google 广告和 TikTok 广告，并提供完整的自动化功能。"
+          "question": "Which ad platforms are supported?",
+          "answer": "CreatiAds supports Meta (Facebook & Instagram), Google Ads, and TikTok Ads with full automation capabilities."
         },
         {
           "key": "free",
-          "question": "有免费计划吗？",
-          "answer": "是的！我们提供慷慨的免费计划，每月 50 个积分，以及免费工具，如 ROAS 计算器、广告标题生成器等。"
+          "question": "Is there a free plan?",
+          "answer": "Yes! We offer a generous free plan with 50 credits per month, plus free tools like ROAS calculators, ad headline generators, and more."
         },
         {
           "key": "compare",
-          "question": "CreatiAds 与竞争对手相比如何？",
-          "answer": "与其他仅专注于创意生成的工具不同，CreatiAds 将 AI 创意生成与广告自动化和优化结合在一起 —— 全部在一个平台上。"
+          "question": "How does CreatiAds compare to competitors?",
+          "answer": "Unlike other tools that focus only on creative generation, CreatiAds combines AI creative generation with ad automation and optimization — all in one platform."
         }
       ]
     }

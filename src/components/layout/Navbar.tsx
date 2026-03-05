@@ -6,94 +6,30 @@ import { motion, AnimatePresence } from "framer-motion";
 import { type Locale } from "@/i18n/config";
 import { Link, usePathname } from "@/i18n/navigation";
 import { LanguageSwitcher } from "./LanguageSwitcher";
-
-interface DropdownItem {
-  label: string;
-  href: string;
-}
-
-interface DropdownGroup {
-  heading?: string;
-  items: DropdownItem[];
-}
-
-interface NavItem {
-  label: string;
-  href?: string;
-  groups?: DropdownGroup[];
-}
-
-const navItems: NavItem[] = [
-  { label: "Home", href: "/" },
-  {
-    label: "AI Creative",
-    groups: [
-      {
-        heading: "Generators",
-        items: [
-          { label: "AI Image Generator", href: "/tools/ai-image-generator" },
-          { label: "AI Video Generator", href: "/tools/ai-video-generator" },
-          { label: "Creative Templates", href: "/tools/creative-templates" },
-          { label: "Ad Creative Library", href: "/tools/ad-creative-library" },
-        ],
-      },
-      {
-        heading: "AI Models",
-        items: [
-          { label: "Sora", href: "/tools/sora" },
-          { label: "Kling", href: "/tools/kling" },
-          { label: "Seedance", href: "/tools/seedance" },
-          { label: "Nano Banana", href: "/tools/nano-banana" },
-        ],
-      },
-    ],
-  },
-  {
-    label: "AI Ads",
-    groups: [
-      {
-        items: [
-          { label: "One Click Ad Launch", href: "/tools/one-click-ad-launch" },
-          { label: "AI Ad Optimization", href: "/tools/ai-ad-optimization" },
-          { label: "Meta Ads Automation", href: "/tools/meta-ads-automation" },
-          { label: "Google Ads Automation", href: "/tools/google-ads-automation" },
-          { label: "TikTok Ads Automation", href: "/tools/tiktok-ads-automation" },
-        ],
-      },
-    ],
-  },
-  {
-    label: "Solutions",
-    groups: [
-      {
-        heading: "By Goal",
-        items: [
-          { label: "Generate More Creatives", href: "/solutions/generate-more-creatives" },
-          { label: "Launch Ads Faster", href: "/solutions/launch-ads-faster" },
-          { label: "Scale Ads Automatically", href: "/solutions/scale-ads-automatically" },
-        ],
-      },
-      {
-        heading: "By Industry",
-        items: [
-          { label: "E-commerce", href: "/solutions/e-commerce" },
-          { label: "Dropshipping", href: "/solutions/dropshipping" },
-          { label: "App Marketing", href: "/solutions/app-marketing" },
-          { label: "Agencies", href: "/solutions/agencies" },
-        ],
-      },
-    ],
-  },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Free Tools", href: "/free-tools" },
-  { label: "Blog", href: "/blog" },
-];
+import { useTranslations } from "next-intl";
 
 interface NavbarProps {
   locale: Locale;
 }
 
-function DesktopDropdown({ groups, isOpen }: { groups: DropdownGroup[]; isOpen: boolean }) {
+interface NavItem {
+  label: string;
+  href?: string;
+  groups?: {
+    heading?: string;
+    items: { label: string; href: string }[];
+  }[];
+}
+
+function DesktopDropdown({ 
+  label, 
+  groups, 
+  isOpen 
+}: { 
+  label: string;
+  groups: { heading?: string; items: { label: string; href: string }[] }[]; 
+  isOpen: boolean;
+}) {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -117,7 +53,7 @@ function DesktopDropdown({ groups, isOpen }: { groups: DropdownGroup[]; isOpen: 
                     <li key={item.href}>
                       <Link
                         href={item.href}
-                        className="block px-3 py-2 text-sm rounded-md text-foreground hover:bg-secondary hover:text-primary transition-colors duration-150"
+                        className="min-w-[110px] block px-3 py-2 text-sm rounded-md text-foreground hover:bg-secondary hover:text-primary transition-colors duration-150 cursor-pointer"
                       >
                         {item.label}
                       </Link>
@@ -134,6 +70,7 @@ function DesktopDropdown({ groups, isOpen }: { groups: DropdownGroup[]; isOpen: 
 }
 
 export default function Navbar({ locale }: NavbarProps) {
+  const t = useTranslations("nav");
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -154,6 +91,72 @@ export default function Navbar({ locale }: NavbarProps) {
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => setOpenDropdown(null), 150);
   };
+
+  const navItems = [
+    { label: t("home"), href: "/" },
+    {
+      label: t("aiCreative"),
+      groups: [
+        {
+          heading: t("generators"),
+          items: [
+            { label: t("aiImageGenerator"), href: "/tools/ai-image-generator" },
+            { label: t("aiVideoGenerator"), href: "/tools/ai-video-generator" },
+            { label: t("creativeTemplates"), href: "/tools/creative-templates" },
+            { label: t("adCreativeLibrary"), href: "/tools/ad-creative-library" },
+          ],
+        },
+        {
+          heading: t("aiModels"),
+          items: [
+            { label: "Sora", href: "/tools/sora" },
+            { label: "Kling", href: "/tools/kling" },
+            { label: "Seedance", href: "/tools/seedance" },
+            { label: "Nano Banana", href: "/tools/nano-banana" },
+          ],
+        },
+      ],
+    },
+    {
+      label: t("aiAds"),
+      groups: [
+        {
+          items: [
+            { label: t("oneClickAdLaunch"), href: "/tools/one-click-ad-launch" },
+            { label: t("aiAdOptimization"), href: "/tools/ai-ad-optimization" },
+            { label: t("metaAdsAutomation"), href: "/tools/meta-ads-automation" },
+            { label: t("googleAdsAutomation"), href: "/tools/google-ads-automation" },
+            { label: t("tiktokAdsAutomation"), href: "/tools/tiktok-ads-automation" },
+          ],
+        },
+      ],
+    },
+    {
+      label: t("solutions"),
+      groups: [
+        {
+          heading: t("byGoal"),
+          items: [
+            { label: t("generateMoreCreatives"), href: "/solutions/generate-more-creatives" },
+            { label: t("launchAdsFaster"), href: "/solutions/launch-ads-faster" },
+            { label: t("scaleAdsAutomatically"), href: "/solutions/scale-ads-automatically" },
+          ],
+        },
+        {
+          heading: t("byIndustry"),
+          items: [
+            { label: t("ecommerce"), href: "/solutions/e-commerce" },
+            { label: t("dropshipping"), href: "/solutions/dropshipping" },
+            { label: t("appMarketing"), href: "/solutions/app-marketing" },
+            { label: t("agencies"), href: "/solutions/agencies" },
+          ],
+        },
+      ],
+    },
+    { label: t("pricing"), href: "/pricing" },
+    { label: t("freeTools"), href: "/free-tools" },
+    { label: t("blog"), href: "/blog" },
+  ];
 
   return (
     <header className="sticky top-0 z-50 bg-card/80 backdrop-blur-xl border-b">
@@ -176,18 +179,22 @@ export default function Navbar({ locale }: NavbarProps) {
               {item.href ? (
                 <Link
                   href={item.href}
-                  className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors rounded-md"
+                  className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors rounded-md cursor-pointer"
                 >
                   {item.label}
                 </Link>
               ) : (
-                <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors rounded-md">
+                <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors rounded-md cursor-pointer">
                   {item.label}
                   <ChevronDown className="h-3.5 w-3.5" />
                 </button>
               )}
               {item.groups && (
-                <DesktopDropdown groups={item.groups} isOpen={openDropdown === item.label} />
+                <DesktopDropdown 
+                  label={item.label}
+                  groups={item.groups} 
+                  isOpen={openDropdown === item.label} 
+                />
               )}
             </div>
           ))}
@@ -198,12 +205,12 @@ export default function Navbar({ locale }: NavbarProps) {
           <LanguageSwitcher currentLocale={locale} />
           <Link
             href="/pricing"
-            className="hidden sm:inline-flex bg-accent-gradient text-accent-foreground px-5 py-2 rounded-lg text-sm font-semibold hover:scale-105 transition-transform shadow-md"
+            className="hidden sm:inline-flex bg-accent-gradient text-accent-foreground px-5 py-2 rounded-lg text-sm font-semibold hover:scale-105 transition-transform shadow-md cursor-pointer"
           >
             Get Started Free
           </Link>
           <button
-            className="lg:hidden p-2 rounded-md hover:bg-muted transition-colors"
+            className="lg:hidden p-2 rounded-md hover:bg-muted transition-colors cursor-pointer"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -227,7 +234,7 @@ export default function Navbar({ locale }: NavbarProps) {
                   {item.href ? (
                     <Link
                       href={item.href}
-                      className="block px-3 py-2 text-sm font-medium rounded-md hover:bg-secondary transition-colors"
+                      className="block px-3 py-2 text-sm font-medium rounded-md hover:bg-secondary transition-colors cursor-pointer"
                     >
                       {item.label}
                     </Link>
@@ -238,7 +245,7 @@ export default function Navbar({ locale }: NavbarProps) {
               ))}
               <Link
                 href="/pricing"
-                className="block mt-3 bg-accent-gradient text-accent-foreground px-5 py-2.5 rounded-lg text-sm font-semibold text-center"
+                className="block mt-3 bg-accent-gradient text-accent-foreground px-5 py-2.5 rounded-lg text-sm font-semibold text-center cursor-pointer"
               >
                 Get Started Free
               </Link>

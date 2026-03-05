@@ -39,7 +39,7 @@ export default function FAQSection({
           className="text-center max-w-2xl mx-auto mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {ft("titlePrefix")} <span className="text-gradient-accent">{ft("titleHighlight")}</span>{ft("titleSuffix")}
+            {ft("titlePrefix")} 
           </h2>
           <p className="text-muted-foreground text-lg">{ft("description")}</p>
         </motion.div>
@@ -57,7 +57,7 @@ export default function FAQSection({
                 value={`faq-${i}`}
                 className="bg-card rounded-lg border px-6 shadow-card"
               >
-                <AccordionTrigger className="text-left font-display font-semibold hover:text-primary transition-colors">
+                <AccordionTrigger className="text-left hover:text-primary transition-colors cursor-pointer">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground leading-relaxed">

@@ -94,16 +94,21 @@ export default function FreeToolsPage() {
               transition={{ duration: 0.3 }}
               className="border-r bg-card overflow-hidden shrink-0 hidden md:block"
             >
-              <div className="w-[280px] p-4 space-y-4 h-full overflow-y-auto">
+              <div className="w-[280px] p-4 space-y-4 h-[calc(100vh-4rem)] overflow-y-auto">
                 <div className="flex items-center justify-between">
                   <h3 className="font-display font-semibold text-sm">Tools</h3>
-                  <button onClick={() => setSidebarOpen(false)} className="p-1 rounded hover:bg-muted transition-colors">
+                  <button
+                    onClick={() => setSidebarOpen(false)}
+                    className="p-1 rounded hover:bg-muted transition-colors"
+                  >
                     <ChevronLeft className="h-4 w-4" />
                   </button>
                 </div>
                 {toolCategories.map((cat) => (
                   <div key={cat.title}>
-                    <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5">{cat.title}</p>
+                    <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5">
+                      {cat.title}
+                    </p>
                     <ul className="space-y-0.5">
                       {cat.items.map((item) => (
                         <li key={item.label}>
@@ -128,7 +133,7 @@ export default function FreeToolsPage() {
         </AnimatePresence>
 
         {/* Main */}
-        <div className="flex-1 flex flex-col lg:flex-row min-h-[calc(100vh-4rem)]">
+        <div className="flex-1 flex flex-col lg:flex-row min-h-[calc(100vh-4rem)] h-[calc(100vh-4rem)] overflow-hidden">
           {/* Toggle sidebar when collapsed */}
           {!sidebarOpen && (
             <button
@@ -140,33 +145,39 @@ export default function FreeToolsPage() {
           )}
 
           {/* Input area */}
-          <div className="flex-1 p-6 lg:p-8 flex flex-col">
-            <motion.div
-              key={selectedTool}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <h1 className="text-2xl md:text-3xl font-bold mb-2">{selectedTool}</h1>
-              <p className="text-muted-foreground mb-6">
-                Enter your details below and let AI generate results for you.
-              </p>
-              <div className="space-y-4 max-w-xl">
-                <textarea
-                  value={prompt}
-                  onChange={(e) => setPrompt(e.target.value)}
-                  placeholder={`Describe your product or enter details for ${selectedTool}...`}
-                  className="w-full min-h-[140px] rounded-lg border bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 transition-shadow resize-none"
-                />
-                <button className="bg-accent-gradient text-accent-foreground px-6 py-2.5 rounded-lg text-sm font-semibold hover:scale-105 transition-transform shadow-md">
-                  Generate
-                </button>
-              </div>
-            </motion.div>
+          <div className="flex-1 flex flex-col min-h-0">
+            <div className="flex-1 overflow-y-auto p-6 lg:p-8">
+              <motion.div
+                key={selectedTool}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <h1 className="text-2xl md:text-3xl font-bold mb-2">{selectedTool}</h1>
+                <p className="text-muted-foreground mb-6">
+                  Enter your details below and let AI generate results for you.
+                </p>
+                <div className="space-y-4 max-w-xl">
+                  <textarea
+                    value={prompt}
+                    onChange={(e) => setPrompt(e.target.value)}
+                    placeholder={`Describe your product or enter details for ${selectedTool}...`}
+                    className="w-full min-h-[140px] rounded-lg border bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 transition-shadow resize-none"
+                  />
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Generate Button - Fixed at bottom */}
+            <div className="p-6 lg:p-8 border-t bg-background">
+              <button className="w-full bg-accent-gradient text-accent-foreground px-6 py-3 rounded-lg font-semibold hover:scale-[1.02] transition-transform shadow-md text-sm">
+                Generate
+              </button>
+            </div>
           </div>
 
           {/* Preview / Result area */}
-          <div className="flex-1 border-t lg:border-t-0 lg:border-l p-6 lg:p-8 bg-muted/30">
+          <div className="flex-1 border-t lg:border-t-0 lg:border-l p-6 lg:p-8 bg-muted/30 overflow-y-auto min-h-0">
             <motion.div
               key={selectedTool + "-preview"}
               initial={{ opacity: 0 }}
@@ -182,6 +193,18 @@ export default function FreeToolsPage() {
                 </div>
               ) : (
                 <div className="space-y-6">
+                  {/* Tips */}
+                  <div className="bg-secondary/50 rounded-xl border p-6">
+                    <h4 className="font-semibold mb-2 flex items-center gap-2">
+                      <Sparkles className="h-4 w-4 text-accent" /> Pro Tips
+                    </h4>
+                    <ul className="text-sm text-muted-foreground space-y-1.5">
+                      <li>• Be specific about your target audience and product</li>
+                      <li>• Include key selling points in your description</li>
+                      <li>• Mention the platform(Meta, Google, TikTok) for optimized results</li>
+                    </ul>
+                  </div>
+
                   {/* Default guidance content */}
                   <div className="bg-card rounded-xl border p-6 shadow-card">
                     <div className="flex items-center gap-2 mb-3">
@@ -229,18 +252,6 @@ export default function FreeToolsPage() {
                       <li>Click <strong>Generate</strong> to get AI-powered results</li>
                       <li>Copy, edit, or regenerate as needed</li>
                     </ol>
-                  </div>
-
-                  {/* Tips */}
-                  <div className="bg-secondary/50 rounded-xl border p-6">
-                    <h4 className="font-semibold mb-2 flex items-center gap-2">
-                      <Sparkles className="h-4 w-4 text-accent" /> Pro Tips
-                    </h4>
-                    <ul className="text-sm text-muted-foreground space-y-1.5">
-                      <li>• Be specific about your target audience and product</li>
-                      <li>• Include key selling points in your description</li>
-                      <li>• Mention the platform (Meta, Google, TikTok) for optimized results</li>
-                    </ul>
                   </div>
                 </div>
               )}

@@ -75,10 +75,7 @@ export default function FeatureDeepDive({ namespace = "default" , config = {} }:
           className="text-center mb-20"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            {sectionTitle.split(" ").slice(0, -2).join(" ")}{" "}
-            <span className="text-gradient-accent">
-              {sectionTitle.split(" ").slice(-2).join(" ")}
-            </span>
+            {sectionTitle}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             {sectionSubtitle}

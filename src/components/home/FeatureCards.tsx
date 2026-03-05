@@ -8,7 +8,6 @@ import { useTranslations } from "next-intl";
 interface FeatureItem {
   icon: React.ElementType;
   key: string;
-  color: string;
   href: string;
   title?: string;
   description?: string;
@@ -25,37 +24,31 @@ const defaultFeatures: FeatureItem[] = [
   {
     icon: ImageIcon,
     key: "aiImage",
-    color: "text-primary",
     href: "/tools/ai-image-generator",
   },
   {
     icon: Video,
     key: "aiVideo",
-    color: "text-accent",
     href: "/ai-video-generator",
   },
   {
     icon: Wand2,
     key: "templates",
-    color: "text-primary",
     href: "/creative-templates",
   },
   {
     icon: Zap,
     key: "adLaunch",
-    color: "text-accent",
     href: "/one-click-ad-launch",
   },
   {
     icon: BarChart3,
     key: "optimization",
-    color: "text-primary",
     href: "/ai-ad-optimization",
   },
   {
     icon: Globe,
     key: "multiPlatform",
-    color: "text-accent",
     href: "/meta-ads-automation",
   },
 ];
@@ -113,17 +106,17 @@ export default function FeatureCards({
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {featuresItems.map((f: FeatureItem) => (
-            <motion.div key={f.key} variants={item}>
+            <motion.div key={f.key} variants={item} className="h-full">
               <Link
                 href={f.href || '#'}
-                className="group block bg-card rounded-xl border p-6 shadow-card hover:shadow-card-hover hover:scale-[1.02] transition-all duration-300"
+                className="h-full group block bg-card rounded-xl border p-6 shadow-card hover:shadow-card-hover hover:scale-[1.02] transition-all duration-300 cursor-pointer"
               >
-                <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg bg-secondary mb-4 ${f.color}`}>
-                  <f.icon className="h-6 w-6" />
+                <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg bg-secondary mb-4`}>
+                  <f.icon className="h-6 w-6 group-hover:text-blue-500 transition-colors" />
                 </div>
                 <h3 className="font-display font-semibold text-lg mb-2 group-hover:text-primary transition-colors">{f.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-3">{f.description}</p>
-                <span className="text-sm font-medium text-primary flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+              <p className="text-muted-foreground text-sm leading-relaxed mb-3 flex-grow">{f.description}</p>
+                <span className="text-sm font-medium text-primary flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity mt-auto">
                   {t("features.learnMore")} <ArrowRight className="h-3.5 w-3.5" />
                 </span>
               </Link>
